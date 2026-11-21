@@ -1,0 +1,2 @@
+{% extends 'base.html' %}
+{% load i18n %}{% block title %}{% trans "درخواست لغو یا مرجوعی" %}{% endblock %}{% block content %}<main class="container inner narrow"><section class="panel"><h1>{% trans "درخواست لغو یا مرجوعی" %}</h1><p>{% trans "شماره سفارش:" %} {{ order.public_id }}</p><p>{% trans "این درخواست نیاز به بررسی مالک دارد و به‌صورت خودکار بازپرداخت یا لغو انجام نمی‌دهد." %}</p><form method="post" class="dashboard-inputs">{% csrf_token %}{{ form.as_div }}<button class="btn btn-primary">{% trans "ثبت درخواست" %}</button></form></section></main>{% endblock %}

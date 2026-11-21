@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ article.title }} | KTK{% endblock %}
+{% block body_class %}kt-ref-news-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-reference-pages.css' %}">{% endblock %}
+{% block content %}
+<main class="kt-ref-news"><section class="kt-news-hero"><div class="kt-site-width"><p class="kt-news-breadcrumb"><a href="{% url 'news_events' %}">{{ ref.news_heading }}</a> / {{ article.title }}</p><h1>{{ article.title }}</h1></div></section>
+<article class="kt-news-article kt-site-width"><img src="{% static 'images/reference-pages/' %}{{ article.image }}" alt=""><span class="kt-news-card-date">▣ {{ article.date }}</span><h1>{{ article.title }}</h1><p>{{ article.excerpt }}</p><a href="{% url 'news_events' %}" class="kt-ref-button">{{ ref.back_news }}</a></article></main>
+{% endblock %}

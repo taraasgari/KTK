@@ -1,0 +1,7 @@
+{% extends 'owner/base.html' %}
+{% block title %}🎨 مدیریت ظاهر | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">BRANDING & LAYOUT</span><h1>👑 نمایه - مدیریت ظاهر</h1><p>مدیریت اطلاعات پایه، لوگو، رنگ‌بندی، تماس، فوتر و اسلایدرها</p></div><a href="{% url 'home' %}" class="btn btn-outline">🏠 مشاهده سایت</a></div>
+<div class="dashboard-grid"><section class="panel"><h2>🎨 اطلاعات و رنگ‌بندی سایت</h2><form method="post" enctype="multipart/form-data" class="form-panel">{% csrf_token %}{{ form.as_div }}<button class="btn btn-primary" type="submit">ذخیره تنظیمات</button></form></section>
+<section class="panel"><h2>🖼️ مدیریت اسلایدر</h2><p class="tiny-note">اسلایدهای فعال برای نمایش در صفحه نخست استفاده می‌شوند.</p><a href="{% url 'owner:slide_new' %}" class="btn btn-primary">+ افزودن اسلاید</a><div class="table-wrap" style="margin-top:20px"><table><thead><tr><th>تصویر</th><th>عنوان</th><th>وضعیت</th><th>ویرایش</th></tr></thead><tbody>{% for slide in slides %}<tr><td>{% if slide.image %}<img src="{{ slide.image.url }}" style="width:90px;max-height:55px;object-fit:cover;border-radius:8px" alt="">{% endif %}</td><td>{{ slide.title }}</td><td>{{ slide.is_active|yesno:'فعال,غیرفعال' }}</td><td><a href="{% url 'owner:slide_edit' slide.pk %}">ویرایش</a></td></tr>{% empty %}<tr><td colspan="4">اسلایدی اضافه نشده است.</td></tr>{% endfor %}</tbody></table></div><a style="display:inline-block;margin-top:16px;color:#c8102e" href="{% url 'owner:slides' %}">مشاهده همه اسلایدها ←</a></section></div>
+{% endblock %}

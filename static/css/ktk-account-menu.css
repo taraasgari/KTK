@@ -1,0 +1,29 @@
+/* KTK user account menu: scoped to the storefront header only. */
+.katika-public .kt-account-menu{position:relative;flex:0 0 auto;z-index:160;min-width:0}
+.katika-public .kt-account-menu>summary{list-style:none}
+.katika-public .kt-account-menu>summary::-webkit-details-marker{display:none}
+.katika-public .kt-account-trigger{display:flex;align-items:center;gap:8px;min-height:43px;padding:6px 9px;border:1px solid transparent;border-radius:12px;color:var(--kt-text);cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s,border-color .15s}
+.katika-public .kt-account-trigger:hover,.katika-public .kt-account-menu[open]>.kt-account-trigger{background:var(--kt-elevated);border-color:var(--kt-stroke)}
+.katika-public .kt-account-trigger>svg{width:22px;height:22px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8}
+.katika-public .kt-account-trigger>.kt-account-chevron{width:14px;height:14px;transition:transform .2s}
+.katika-public .kt-account-menu[open] .kt-account-chevron{transform:rotate(180deg)}
+.katika-public .kt-account-username{display:block;max-width:128px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--kt-text);font-size:12px;font-weight:800;text-align:start}
+.katika-public .kt-account-dropdown{position:absolute;top:calc(100% + 12px);inset-inline-end:0;width:272px;max-width:calc(100vw - 24px);padding:9px;background:var(--kt-surface);color:var(--kt-text);border:1px solid var(--kt-stroke);border-radius:17px;box-shadow:0 16px 42px rgba(0,0,0,.18);z-index:250;direction:inherit;text-align:start}
+.katika-public .kt-account-dropdown-head{display:flex;align-items:center;gap:11px;padding:12px 10px 15px;border-bottom:1px solid var(--kt-stroke);margin-bottom:7px;min-width:0}
+.katika-public .kt-account-avatar{width:40px;height:40px;display:grid;place-items:center;flex:0 0 auto;border-radius:12px;background:color-mix(in srgb, #c8102e 16%, var(--kt-surface));color:#d71233;font:900 19px/1 Arial,sans-serif}
+.katika-public .kt-account-dropdown-head>div{display:flex;flex-direction:column;gap:3px;min-width:0;max-width:calc(100% - 50px)}
+.katika-public .kt-account-dropdown-head small{font-size:11px;color:var(--kt-muted)}
+.katika-public .kt-account-dropdown-head strong{font-size:13px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.katika-public .kt-account-dropdown-links{display:flex;flex-direction:column;gap:3px}
+.katika-public .kt-account-dropdown-links a,.katika-public .kt-account-logout button{width:100%;min-height:43px;display:flex;align-items:center;gap:12px;border:0;border-radius:10px;padding:10px 12px;text-align:start;background:transparent;color:var(--kt-text);font-family:inherit;font-size:13px;font-weight:700;line-height:1.5;text-decoration:none;cursor:pointer}
+.katika-public .kt-account-dropdown-links a:hover,.katika-public .kt-account-logout button:hover{background:var(--kt-elevated)}
+.katika-public .kt-account-dropdown-links svg,.katika-public .kt-account-logout svg{width:19px;height:19px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.8}
+.katika-public .kt-account-dropdown-links a span:nth-child(2),.katika-public .kt-account-logout button span{flex:1}
+.katika-public .kt-account-cart-count{font-size:11px;font-weight:800;border-radius:50px;background:var(--kt-elevated);padding:2px 7px;color:var(--kt-text)}
+.katika-public .kt-account-logout{margin:7px 0 0;padding-top:7px;border-top:1px solid var(--kt-stroke)}
+.katika-public .kt-account-logout button{color:#e22442}
+.katika-public .kt-account-logout button:hover{background:color-mix(in srgb,#db1738 11%,var(--kt-surface))}
+.katika-public .kt-account-trigger:focus-visible,.katika-public .kt-account-dropdown a:focus-visible,.katika-public .kt-account-logout button:focus-visible{outline:2px solid #d20d2a;outline-offset:2px}
+@media(max-width:1150px){.katika-public .kt-account-username{max-width:86px;font-size:11px}}
+@media(max-width:800px){.katika-public .kt-account-trigger{padding:5px 4px;gap:5px}.katika-public .kt-account-username{max-width:84px;font-size:11px}.katika-public .kt-account-dropdown{top:calc(100% + 8px)}}
+@media(max-width:520px){.katika-public .kt-account-username{max-width:62px}.katika-public .kt-account-trigger>.kt-account-chevron{width:12px;height:12px}.katika-public .kt-account-dropdown{width:252px}}

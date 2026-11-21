@@ -1,0 +1,6 @@
+{% extends 'owner/base.html' %}
+{% block title %}🔑 دسترسی ادمین‌ها | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">PERMISSION MANAGEMENT</span><h1>🔑 دسترسی ادمین‌ها</h1><p>تنظیم دسترسی‌های {{ target.user.username }} ({{ target.get_role_display }})</p></div><a href="{% url 'owner:team' %}" class="btn btn-outline">بازگشت به مدیریت ادمین‌ها</a></div>
+<section class="panel" style="max-width:850px"><form method="post">{% csrf_token %}<div class="p-4 rounded-xl bg-gray-50 mb-5"><label><input type="checkbox" name="default_role" value="1" {% if default_role %}checked{% endif %}> استفاده از مجوزهای پیش‌فرض نقش</label><p class="tiny-note">برای تنظیم اختصاصی، تیک این گزینه را بردارید و مجوزهای پایین را انتخاب کنید.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-4">{% for code,title,checked in permission_items %}<label class="p-3 rounded-xl border border-gray-100"><input type="checkbox" name="permissions" value="{{ code }}" {% if checked %}checked{% endif %}> {{ title }}</label>{% endfor %}</div><button class="btn btn-primary" type="submit" style="margin-top:22px">ذخیره دسترسی‌ها</button></form></section>
+{% endblock %}

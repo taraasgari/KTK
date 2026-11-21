@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "ثبت‌نام | کاتیکا" %}{% endblock %}
+{% block content %}<main class="container inner narrow"><div class="panel login-panel"><span class="section-kicker">KTK ACCOUNT</span><h1>{% trans "ساخت حساب کاربری" %}</h1><p>{% trans "با ساخت حساب، دسترسی به بخش مشتریان برای شما فعال می‌شود." %}</p><form method="post" class="form-panel">{% csrf_token %}{{ form.as_div }}<button class="btn btn-primary wide" type="submit">{% trans "ثبت‌نام و ورود" %}</button></form><p>{% trans "حساب دارید؟" %} <a href="{% url 'login' %}" style="color:var(--red);font-weight:700">{% trans "وارد شوید" %}</a></p></div></main>{% endblock %}

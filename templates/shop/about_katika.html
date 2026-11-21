@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ ref.about_heading }} {{ ref.brand }} | KTK{% endblock %}
+{% block body_class %}kt-ref-about-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-reference-pages.css' %}?v=20261119-2">{% endblock %}
+{% block content %}
+<main class="kt-ref-about" aria-labelledby="about-title">
+  <section class="kt-about-hero">
+    <div class="kt-about-building" aria-hidden="true"><img src="{% static 'images/reference-pages/about-building.webp' %}" alt="" width="685" height="413" loading="eager" decoding="async" fetchpriority="high"></div>
+    <div class="kt-about-hero-inner kt-site-width">
+      <div class="kt-about-intro">
+        <p class="kt-ref-eyebrow">{{ ref.about_eyebrow }} <i aria-hidden="true"></i></p>
+        <h1 id="about-title">{{ ref.about_heading }} <span>{{ ref.brand }}</span></h1>
+        <p>{{ ref.about_intro }}</p>
+        <a class="kt-ref-button" href="{% url 'cooperation' %}">{{ ref.cooperation }} <span aria-hidden="true">←</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="kt-about-executive kt-site-width" aria-label="{{ ref.ceo_label }}">
+    <div class="kt-about-executive-text">
+      <p class="kt-ref-eyebrow">{{ ref.ceo_label }} <i aria-hidden="true"></i></p>
+      <h2>{{ ref.ceo_name }}</h2>
+      <p class="kt-about-position">{{ ref.ceo_title }}</p>
+      <blockquote>{{ ref.ceo_quote }}</blockquote>
+    </div>
+    <img class="kt-about-ceo-photo" src="{% static 'images/reference-pages/about-ceo.webp' %}" alt="{{ ref.ceo_name }}" width="590" height="430" loading="eager" decoding="async" fetchpriority="high">
+  </section>
+  <section class="kt-about-stats kt-site-width" aria-label="KTK">
+    <div><span class="kt-about-stat-icon">▥</span><strong>+۱۰</strong><p>{{ ref.stat1 }}</p></div>
+    <div><span class="kt-about-stat-icon">✹</span><strong>+۱۵ <small>{% if LANGUAGE_CODE == 'fa' %}سال{% elif LANGUAGE_CODE == 'en' %}years{% else %}年{% endif %}</small></strong><p>{{ ref.stat2 }}</p></div>
+    <div><span class="kt-about-stat-icon">⬡</span><strong>+۳,۰۰۰</strong><p>{{ ref.stat3 }}</p></div>
+    <div><span class="kt-about-stat-icon">♧</span><strong>+۲۰۰</strong><p>{{ ref.stat4 }}</p></div>
+  </section>
+  <section class="kt-about-values kt-site-width" aria-label="{{ ref.values_title }}">
+    <h2>{{ ref.values_title }}</h2>
+    <div><span class="kt-value-icon">♧</span><b>{{ ref.value1 }}</b></div>
+    <div><span class="kt-value-icon">♢</span><b>{{ ref.value2 }}</b></div>
+    <div><span class="kt-value-icon">♧</span><b>{{ ref.value3 }}</b></div>
+    <div><span class="kt-value-icon">↗</span><b>{{ ref.value4 }}</b></div>
+  </section>
+</main>
+{% endblock %}

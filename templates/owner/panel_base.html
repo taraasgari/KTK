@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html><html lang="fa" dir="rtl" data-ktk-theme="day"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8102e">
+<title>{% block title %}پنل مالک | KTK{% endblock %}</title>
+<script>(function(){var r=document.documentElement,t='light';try{var saved=localStorage.getItem('ktk-theme');if(saved==='dark'||saved==='light'){t=saved}else if(localStorage.getItem('ktk-owner-theme')==='night'){t='dark'}localStorage.setItem('ktk-theme',t)}catch(e){}r.dataset.ktTheme=t;r.dataset.ktkTheme=t==='dark'?'night':'day';})();</script>
+<link rel="stylesheet" href="{% static 'css/tailwind.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/ktk-reference-panel.css' %}">
+<link rel="stylesheet" href="{% static 'css/owner-panel.css' %}">
+<link rel="stylesheet" href="{% static 'css/owner-icons.css' %}">
+<link rel="stylesheet" href="{% static 'css/ktk-reference-overrides.css' %}">
+{% block extra_css %}{% endblock %}</head>
+<body class="pa-body ktk-panel-body">
+<section class="pa-shell">
+<aside class="pa-sidebar" data-pa-sidebar aria-label="منوی مدیریت">
+<div class="pa-sidebar-brand"><span class="pa-monogram">K</span><span><strong>{{ store.name|default:'KTK' }}</strong><small>OWNER CONSOLE</small></span></div>
+<button class="pa-sidebar-close" type="button" data-pa-close aria-label="بستن منو">✕</button>
+<nav class="pa-nav" aria-label="بخش‌های پنل">
+<div class="pa-nav-group">بخش اصلی</div>
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" href="{% url 'owner:home' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#crown"></use></svg><span>پنل مالک</span></a>{% endif %}
+{% if can_dashboard %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'management' %}active{% endif %}" href="{% url 'owner:management' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#gauge"></use></svg><span>داشبورد مدیریت</span></a>{% endif %}
+
+<div class="pa-nav-group">فروش و محصولات</div>
+{% if can_products %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'products' or request.resolver_match.url_name == 'product_edit' or request.resolver_match.url_name == 'product_new' %}active{% endif %}" href="{% url 'owner:products' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#box"></use></svg><span>محصولات</span></a>{% endif %}
+{% if can_categories %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'categories' or request.resolver_match.url_name == 'category_edit' or request.resolver_match.url_name == 'category_new' %}active{% endif %}" href="{% url 'owner:categories' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#layers"></use></svg><span>دسته‌بندی‌ها</span></a>{% endif %}
+{% if can_orders %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'orders' or request.resolver_match.url_name == 'order_detail' %}active{% endif %}" href="{% url 'owner:orders' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#receipt"></use></svg><span>سفارش‌ها و فاکتورها</span></a>{% endif %}
+
+<div class="pa-nav-group">انبار و گزارش‌ها</div>
+{% if can_inventory %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'inventory' %}active{% endif %}" href="{% url 'owner:inventory' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#warehouse"></use></svg><span>انبار و آمار موجودی</span></a>{% endif %}
+{% if can_inventory %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'warehouse_products' %}active{% endif %}" href="{% url 'owner:warehouse_products' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#boxes"></use></svg><span>لیست موجودی محصولات</span></a>{% endif %}
+{% if can_analytics %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'analytics' %}active{% endif %}" href="{% url 'owner:analytics' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#chart"></use></svg><span>آمار و گزارش‌ها</span></a>{% endif %}
+
+<div class="pa-nav-group">ارتباط با مشتری</div>
+{% if can_users %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'users' %}active{% endif %}" href="{% url 'owner:users' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#users"></use></svg><span>مشتریان</span></a>{% endif %}
+{% if can_reviews %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'reviews' %}active{% endif %}" href="{% url 'owner:reviews' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#star"></use></svg><span>نظرات و امتیازها</span></a>{% endif %}
+{% if can_support %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'support' or request.resolver_match.url_name == 'support_detail' %}active{% endif %}" href="{% url 'owner:support' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#headset"></use></svg><span>پشتیبانی و تیکت‌ها</span></a>{% endif %}
+{% if can_contacts %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'contacts' or request.resolver_match.url_name == 'contact_detail' %}active{% endif %}" href="{% url 'owner:contacts' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#email"></use></svg><span>پیام‌های تماس با ما</span></a>{% endif %}
+{% if can_cooperations %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'cooperations' or request.resolver_match.url_name == 'cooperation_detail' %}active{% endif %}" href="{% url 'owner:cooperations' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#users"></use></svg><span>درخواست‌های همکاری</span></a>{% endif %}
+{% if can_returns %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'returns' or request.resolver_match.url_name == 'return_detail' %}active{% endif %}" href="{% url 'owner:returns' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#rotate"></use></svg><span>لغو و مرجوعی</span></a>{% endif %}
+
+<div class="pa-nav-group">تنظیمات و ظاهر</div>
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'settings' %}active{% endif %}" href="{% url 'owner:settings' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#sliders"></use></svg><span>تنظیمات فروشگاه</span></a>{% endif %}
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'payment' %}active{% endif %}" href="{% url 'owner:payment' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#creditcard"></use></svg><span>تنظیمات پرداخت</span></a>{% endif %}
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'numbers' %}active{% endif %}" href="{% url 'owner:numbers' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#hash"></use></svg><span>فرمت اعداد</span></a>{% endif %}
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'email' %}active{% endif %}" href="{% url 'owner:email' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#email"></use></svg><span>ایمیل سایت</span></a>{% endif %}
+{% if can_appearance %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'appearance' %}active{% endif %}" href="{% url 'owner:appearance' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#palette"></use></svg><span>ظاهر و اطلاعات برند</span></a>{% endif %}
+{% if can_appearance %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'slides' or request.resolver_match.url_name == 'slide_edit' or request.resolver_match.url_name == 'slide_new' %}active{% endif %}" href="{% url 'owner:slides' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#image"></use></svg><span>اسلایدرها</span></a>{% endif %}
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'customizer' %}active{% endif %}" href="{% url 'owner:customizer' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#wand"></use></svg><span>طراحی بصری سایت</span></a>{% endif %}
+
+<div class="pa-nav-group">اعضا و دسترسی‌ها</div>
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}" href="{% url 'owner:team' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#shield"></use></svg><span>مدیریت ادمین‌ها</span></a>{% endif %}
+{% if is_owner %}<a class="pa-nav-link {% if request.resolver_match.url_name == 'access' or request.resolver_match.url_name == 'permissions' %}active{% endif %}" href="{% url 'owner:access' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#key"></use></svg><span>دسترسی ادمین‌ها</span></a>{% endif %}
+
+<div class="pa-nav-group">حساب کاربری</div>
+<a class="pa-nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}" href="{% url 'owner:profile' %}"><svg class="pa-nav-icon" aria-hidden="true"><use href="{% static 'icons/owner-symbols.svg' %}#user"></use></svg><span>پروفایل من</span></a>
+</nav>
+<div class="pa-sidebar-foot"><a href="{% url 'home' %}">↗ <span>مشاهده فروشگاه</span></a>
+<div class="pa-owner-mini"><span class="pa-owner-avatar">{{ user.username|first|upper }}</span><span><strong>{{ user.username }}</strong><small>{% if is_owner %}مالک فروشگاه{% else %}مدیر فروشگاه{% endif %}</small></span></div>
+</div></aside>
+<div class="pa-main"><header class="pa-topbar"><div class="pa-topbar-start">
+<button class="pa-menu-button" type="button" data-pa-open aria-label="باز کردن فهرست">☰</button>
+<a class="pa-shop-brand" href="{% url 'owner:home' %}"><span class="pa-shop-mark">K</span><span><small>KTK SHOP</small><strong>{{ store.name|default:'KTK' }}</strong></span></a></div>
+{% if can_products %}<form class="pa-admin-search" action="{% url 'owner:products' %}" method="get"><button type="submit" aria-label="جستجو">⌕</button><input type="search" name="q" placeholder="جستجوی محصول یا کد کالا..." value="{{ request.GET.q|default:'' }}"></form>{% else %}<span></span>{% endif %}
+<div class="pa-topbar-actions"><a class="pa-icon-button" href="{% url 'home' %}" title="فروشگاه" aria-label="فروشگاه">⌂</a><button type="button" class="pa-icon-button" data-pa-theme title="تغییر تم" aria-label="حالت روز و شب">◐</button>
+<details class="pa-account-menu"><summary><span class="pa-account-avatar">{{ user.username|first|upper }}</span><span class="pa-account-name">{{ user.username }}</span><span aria-hidden="true">⌄</span></summary><div class="pa-account-dropdown"><div class="pa-account-head"><strong>{{ user.username }}</strong><small dir="ltr">{{ user.email|default:'بدون ایمیل' }}</small></div><a href="{% url 'owner:profile' %}">پروفایل من</a>{% if is_owner %}<a href="{% url 'owner:home' %}">پنل مالک</a>{% endif %}<a href="{% url 'home' %}">مشاهده فروشگاه</a><form action="{% url 'logout' %}" method="post">{% csrf_token %}<button type="submit">خروج از حساب</button></form></div></details></div></header>
+{% if messages %}<div class="pa-messages" role="status">{% for message in messages %}<div class="pa-message {{ message.tags|default:'info' }}"><span>{{ message }}</span><button type="button" data-pa-message-close aria-label="بستن پیام">✕</button></div>{% endfor %}</div>{% endif %}
+<main class="pa-content">{% block content %}{% endblock %}</main></div>
+</section><div class="pa-overlay" data-pa-overlay></div><script src="{% static 'js/katika-theme.js' %}?v=20261119-2" defer></script><script src="{% static 'js/ktk-reference-panel.js' %}?v=20261119-2" defer></script>{% block extra_js %}{% endblock %}
+</body></html>

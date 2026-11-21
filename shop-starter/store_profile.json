@@ -1,0 +1,17 @@
+{
+  "kind": "shop-starter",
+  "branding": {
+    "site_name": "KTK",
+    "site_title": "فروشگاه KTK",
+    "site_description": "فروشگاه اینترنتی KTK",
+    "primary_color": "#D72638",
+    "secondary_color": "#111111",
+    "accent_color": "#C91F30",
+    "background_color": "#FFFFFF",
+    "text_color": "#111111",
+    "footer_text": "تمامی حقوق برای فروشگاه محفوظ است."
+  },
+  "categories": [],
+  "product_types": [],
+  "tags": []
+}

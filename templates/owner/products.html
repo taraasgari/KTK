@@ -1,0 +1,9 @@
+{% extends 'owner/base.html' %}
+{% load ktk_numbers %}
+{% load humanize %}
+{% block title %}محصولات | KTK{% endblock %}
+{% block owner_content %}<div class="owner-header"><div><span class="section-kicker">CATALOG</span><h1>مدیریت محصولات</h1><p>قیمت، موجودی، تصویر و وضعیت نمایش محصولات</p></div>{% if can_product_edit %}<a class="btn btn-primary" href="{% url 'owner:product_new' %}">+ محصول جدید</a>{% endif %}</div><form method="get" action="{% url 'owner:products' %}" class="panel" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+  <input name="q" value="{{ query }}" placeholder="جستجو بر اساس نام یا کد محصول" style="flex:1;min-width:180px;padding:11px;border:1px solid #ddd;border-radius:9px">
+  <select name="category" style="padding:11px;border:1px solid #ddd;border-radius:9px"><option value="">همه دسته‌بندی‌ها</option>{% for c in categories %}<option value="{{ c.pk }}" {% if selected_category == c.pk|stringformat:'s' %}selected{% endif %}>{{ c.name }}</option>{% endfor %}</select>
+  <button class="btn btn-primary" type="submit">جستجو</button><a href="{% url 'owner:products' %}" class="btn btn-outline">پاک‌کردن</a>
+</form><section class="panel"><div class="table-wrap"><table><thead><tr><th>نام محصول</th><th>دسته‌بندی</th><th>قیمت (تومان)</th><th>موجودی</th><th>وضعیت</th><th></th></tr></thead><tbody>{% for p in products %}<tr><td><strong>{{ p.name }}</strong><small class="table-sub">{{ p.sku|default:'بدون کد' }}</small></td><td>{{ p.category.name|default:'—' }}</td><td>{{ p.price|ktk_number:store }}</td><td>{{ p.stock }}</td><td><span class="status">{% if p.is_active %}فعال{% else %}غیرفعال{% endif %}</span></td><td>{% if can_product_edit %}<a href="{% url 'owner:product_edit' p.pk %}">ویرایش ←</a>{% endif %}</td></tr>{% empty %}<tr><td colspan="6">هنوز محصولی اضافه نشده است.</td></tr>{% endfor %}</tbody></table></div></section>{% endblock %}

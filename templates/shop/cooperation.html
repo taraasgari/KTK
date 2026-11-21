@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}{% block title %}{% trans "همکاری با ما | کاتیکا" %}{% endblock %}
+{% block body_class %}kt-contact-body{% endblock %}
+{% block content %}
+<main class="kt-contact-shell kt-cooperation-shell"><div class="kt-contact-layout kt-site-width">
+  <section class="kt-contact-intro kt-cooperation-intro" aria-labelledby="cooperation-heading">
+    <div class="kt-page-eyebrow">JOIN OUR TEAM <span></span></div>
+    <h1 id="cooperation-heading">{% trans "همکاری با" %} <em>{% trans "کاتیکا" %}</em></h1>
+    <p class="kt-contact-lead">{% trans "از همکاری با افراد و مجموعه‌های حرفه‌ای و متعهد در زمینه تأمین، توزیع و توسعه بازار محصولات کاتیکا استقبال می‌کنیم." %}</p>
+    <div class="kt-cooperation-benefits">
+      <div class="kt-cooperation-benefit"><span class="kt-icon-bubble"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 7 7l5 2 5-2 4 4-5 6-4-4-4 4-5-6Z"/><path d="m9 16 3 3 3-2m1-4 3 4"/></svg></span><div><h2>{% trans "همکاری بلندمدت" %}</h2><p>{% trans "ایجاد روابط پایدار و مبتنی بر اعتماد" %}</p></div></div>
+      <div class="kt-cooperation-benefit"><span class="kt-icon-bubble"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16M7 15l5-5 3 2 5-7"/><path d="M15 5h5v5"/></svg></span><div><h2>{% trans "رشد مشترک" %}</h2><p>{% trans "توسعه بازار و افزایش فرصت‌های فروش" %}</p></div></div>
+      <div class="kt-cooperation-benefit"><span class="kt-icon-bubble"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 4v6c0 5-4 8-8 10-4-2-8-5-8-10V6Z"/><path d="m8 12 3 3 5-6"/></svg></span><div><h2>{% trans "پشتیبانی حرفه‌ای" %}</h2><p>{% trans "همراهی در تمام مراحل همکاری" %}</p></div></div>
+    </div>
+  </section>
+  <section class="kt-form-panel" aria-labelledby="cooperation-form-heading">
+    <h2 id="cooperation-form-heading">{% trans "درخواست همکاری" %}</h2><p class="kt-form-intro">{% trans "اطلاعات خود را تکمیل کنید تا در کوتاه‌ترین زمان با شما تماس بگیریم." %}</p>
+    <form method="post" class="kt-public-form">{% csrf_token %}
+      <div class="kt-hidden-field" aria-hidden="true"><label for="id_website">{% trans "وب‌سایت" %}</label><input id="id_website" name="website" tabindex="-1" autocomplete="off"></div>
+      {% if form.non_field_errors %}<div class="kt-form-alert" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+      <div class="kt-form-two"><div class="kt-field"><label class="kt-sr-only" for="{{ form.full_name.id_for_label }}">{% trans "نام و نام خانوادگی" %}</label>{{ form.full_name }}{{ form.full_name.errors }}</div><div class="kt-field"><label class="kt-sr-only" for="{{ form.company.id_for_label }}">{% trans "نام مجموعه" %}</label>{{ form.company }}{{ form.company.errors }}</div></div>
+      <div class="kt-field"><label class="kt-sr-only" for="{{ form.cooperation_type.id_for_label }}">{% trans "نوع همکاری" %}</label><span class="kt-select-wrap">{{ form.cooperation_type }}</span>{{ form.cooperation_type.errors }}</div>
+      <div class="kt-field"><label class="kt-sr-only" for="{{ form.phone.id_for_label }}">{% trans "شماره تماس" %}</label>{{ form.phone }}{{ form.phone.errors }}</div>
+      <div class="kt-field"><label class="kt-sr-only" for="{{ form.details.id_for_label }}">{% trans "توضیحات تکمیلی" %}</label>{{ form.details }}{{ form.details.errors }}</div>
+      <button type="submit" class="kt-submit-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m22 2-7 20-4.5-8.5L2 9Z"/><path d="m22 2-11.5 11.5"/></svg> {% trans "ارسال درخواست" %}</button>
+    </form>
+  </section>
+</div></main>
+{% endblock %}

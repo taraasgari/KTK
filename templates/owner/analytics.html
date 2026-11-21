@@ -1,0 +1,10 @@
+{% extends 'owner/base.html' %}
+{% load ktk_numbers %}
+{% load humanize %}
+{% block title %}📊 مرکز آمار و گزارش‌ها | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">STATISTICS</span><h1>📊 مرکز آمار و گزارش‌ها</h1><p>آمار از سفارش‌ها و موجودی واقعی فروشگاه محاسبه می‌شود؛ داده پرداخت تأییدشده هنوز وجود ندارد.</p></div><a href="{% url 'owner:analytics_csv' %}" class="dashboard-action"><i class="fas fa-file-csv"></i> خروجی CSV سفارش‌ها</a></div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6"><div class="mini-card"><span>تعداد سفارش‌ها</span><strong>{{ total_orders|ktk_number:store }}</strong></div><div class="mini-card"><span>سفارش‌های تحویل‌شده</span><strong>{{ delivered_orders|ktk_number:store }}</strong></div><div class="mini-card"><span>ارزش سفارش‌های تحویل‌شده (تومان)</span><strong>{{ delivered_value|ktk_number:store }}</strong></div></div>
+<div class="dashboard-grid"><section class="dashboard-card dashboard-section"><h2>وضعیت سفارش‌ها</h2><div class="dashboard-table-wrap"><table class="dashboard-table"><thead><tr><th>وضعیت</th><th>تعداد</th><th>ارزش سفارش</th></tr></thead><tbody>{% for row in by_status %}<tr><td>{{ row.status_title }}</td><td>{{ row.count }}</td><td>{{ row.value|ktk_number:store }}</td></tr>{% empty %}<tr><td colspan="3">داده‌ای وجود ندارد.</td></tr>{% endfor %}</tbody></table></div></section>
+<section class="dashboard-card dashboard-section"><h2>محصولات پرفروش</h2><div class="dashboard-table-wrap"><table class="dashboard-table"><thead><tr><th>محصول</th><th>تعداد فروش ثبت‌شده</th></tr></thead><tbody>{% for product in top_products %}<tr><td>{% if can_product_edit %}<a href="{% url 'owner:product_edit' product.pk %}">{{ product.name }}</a>{% else %}{{ product.name }}{% endif %}</td><td>{{ product.units }}</td></tr>{% empty %}<tr><td colspan="2">هنوز فروشی ثبت نشده است.</td></tr>{% endfor %}</tbody></table></div></section></div>
+{% endblock %}

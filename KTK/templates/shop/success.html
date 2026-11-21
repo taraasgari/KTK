@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}سفارش ثبت شد | KTK{% endblock %}
+{% block content %}<main class="container inner narrow"><div class="success-panel"><div class="success-symbol">✓</div><span class="section-kicker">ORDER RECEIVED</span><h1>سفارش شما ثبت شد</h1><p>برای پیگیری سفارش با فروشگاه تماس بگیرید و کد زیر را اعلام کنید.</p><div class="order-code">{{ order.public_id }}</div><p>مبلغ: <strong>{{ order.total_price|intcomma }} تومان</strong></p><p class="tiny-note">پرداخت اینترنتی در این نسخه فعال نیست.</p><a class="btn btn-primary" href="{% url 'home' %}">بازگشت به فروشگاه</a></div></main>{% endblock %}

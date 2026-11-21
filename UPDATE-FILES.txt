@@ -1,0 +1,9 @@
+templates/base.html
+shop/context.py
+shop/tests_account_menu.py
+static/css/ktk-account-menu.css
+static/js/ktk-account-menu.js
+locale/en/LC_MESSAGES/django.po
+locale/en/LC_MESSAGES/django.mo
+locale/zh_Hans/LC_MESSAGES/django.po
+locale/zh_Hans/LC_MESSAGES/django.mo

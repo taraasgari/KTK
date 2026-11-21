@@ -1,0 +1,2 @@
+{% extends 'owner/base.html' %}
+{% block owner_content %}<div class="owner-header"><div><span class="section-kicker">EDIT / KTK</span><h1>{{ heading }}</h1></div></div><form method="post" enctype="multipart/form-data" class="panel form-panel owner-form">{% csrf_token %}{{ form.as_div }}<div class="actions-row"><button type="submit" class="btn btn-primary">ذخیره تغییرات</button><a href="{% url back %}" class="btn btn-outline">انصراف</a></div></form>{% endblock %}

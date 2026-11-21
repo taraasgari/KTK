@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "ورود به حساب | کاتیکا" %}{% endblock %}
+{% block content %}<main class="container inner narrow"><div class="panel login-panel"><span class="section-kicker">KTK ACCOUNT</span><h1>{% trans "ورود به حساب کاتیکا" %}</h1><p>{% trans "برای دسترسی به حساب خود وارد شوید. مدیران از همین صفحه به پنل مالک هدایت می‌شوند." %}</p>{% if form.errors %}<div class="alert alert-error">{% trans "نام کاربری یا رمز عبور نادرست است." %}</div>{% endif %}<form method="post" class="form-panel">{% csrf_token %}{{ form.as_div }}<input type="hidden" name="next" value="{{ next }}"><button class="btn btn-primary wide" type="submit">{% trans "ورود به حساب" %}</button></form><p>{% trans "حساب ندارید؟" %} <a href="{% url 'register' %}" style="color:var(--red);font-weight:700">{% trans "ثبت‌نام کنید" %}</a></p></div></main>{% endblock %}

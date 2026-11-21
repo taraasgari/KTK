@@ -1,0 +1,1029 @@
+# English translations for KTK KATIKA.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the KTK KTK project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KTK KTK 4.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-18 22:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "(رول و متراژ)"
+msgstr "Rolls & lengths"
+
+msgid "KTK — کاتیکا"
+msgstr "KTK"
+
+msgid "© KTK — فروشگاه کاتیکا"
+msgstr "© KTK — Official Store"
+
+msgid "· قیمت واحد:"
+msgstr "· Unit price:"
+
+msgid "آدرس"
+msgstr "Address"
+
+msgid "ابعاد"
+msgstr "Dimensions"
+
+msgid "ادامه و ثبت سفارش ←"
+msgstr "Continue to checkout →"
+
+msgid "ارتباط با کاتیکا"
+msgstr "Contact KTK"
+
+msgid "ارتباط و مشاوره"
+msgstr "Contact & consultation"
+
+msgid "ارزان‌ترین"
+msgstr "Price: Low to high"
+
+msgid "ارسال تصویر فیش"
+msgstr "Upload payment receipt"
+
+msgid "ارسال درخواست"
+msgstr "Submit request"
+
+msgid "ارسال سریع"
+msgstr "Fast delivery"
+
+msgid "ارسال سریع به سراسر کشور"
+msgstr "Fast nationwide delivery"
+
+msgid "ارسال پیام"
+msgstr "Send message"
+
+msgid "از"
+msgstr "From"
+
+msgid "از میان محصولات کاتیکا، انتخاب مناسب خودتان را پیدا کنید."
+msgstr "Find the right solution among KTK products."
+
+msgid "از همکاری با افراد و مجموعه‌های حرفه‌ای و متعهد در زمینه تأمین، توزیع و توسعه بازار محصولات کاتیکا استقبال می‌کنیم."
+msgstr "We welcome partnerships with professional and committed distributors, suppliers and businesses."
+
+msgid "اطلاعات تحویل"
+msgstr "Delivery information"
+
+msgid "اطلاعات خود را تکمیل کنید تا در کوتاه‌ترین زمان با شما تماس بگیریم."
+msgstr "Complete your details and our team will contact you soon."
+
+msgid "اطلاعات کارت به کارت"
+msgstr "Bank transfer details"
+
+msgid "اعمال فیلتر"
+msgstr "Apply filters"
+
+msgid "افزایش تعداد"
+msgstr "Increase quantity"
+
+msgid "افزودن محصول دیگر"
+msgstr "Add more products"
+
+msgid "انتخاب حرفه‌ای‌تر."
+msgstr "A smarter choice."
+
+msgid "انتخاب محصول مناسب"
+msgstr "Choose the right product"
+
+msgid "ایجاد روابط پایدار و مبتنی بر اعتماد"
+msgstr "Building long-term, trusted relationships"
+
+msgid "ایمیل"
+msgstr "Email"
+
+msgid "ایمیل هنوز ثبت نشده است."
+msgstr "Email is not available yet."
+
+msgid "این درخواست نیاز به بررسی مالک دارد و به‌صورت خودکار بازپرداخت یا لغو انجام نمی‌دهد."
+msgstr "This request requires owner approval and will not automatically cancel or refund the order."
+
+msgid "اینستاگرام"
+msgstr "Instagram"
+
+msgid "با ساخت حساب، دسترسی به بخش مشتریان برای شما فعال می‌شود."
+msgstr "Create an account to access the customer area."
+
+msgid "با قیمت رقابتی"
+msgstr "At competitive prices"
+
+msgid "باز کردن منوی سایت"
+msgstr "Open navigation"
+
+msgid "بازگشت به فروشگاه"
+msgstr "Back to store"
+
+msgid "برای دریافت اطلاعات، مشاوره محصول و ثبت درخواست با ما در ارتباط باشید."
+msgstr "Contact us for product information, advice or a request."
+
+msgid "برای دسترسی به حساب خود وارد شوید. مدیران از همین صفحه به پنل مالک هدایت می‌شوند."
+msgstr "Sign in to your account. Store managers can also access their panel here."
+
+msgid "برای شروع، محصولی از فروشگاه انتخاب کنید."
+msgstr "Choose a product to get started."
+
+msgid "برای همکاری در توزیع، فروش عمده یا نمایندگی، درخواست خود را ثبت کنید."
+msgstr "Apply to become a distributor, wholesale partner or agent."
+
+msgid "برای پیگیری سفارش با فروشگاه تماس بگیرید و کد زیر را اعلام کنید."
+msgstr "To follow up, contact the store and quote the order number below."
+
+msgid "بعدی"
+msgstr "Next"
+
+msgid "به سراسر کشور"
+msgstr "Nationwide"
+
+msgid "تا"
+msgstr "To"
+
+msgid "تحریر"
+msgstr "Stationery"
+
+msgid "تخفیف ویژه"
+msgstr "Special offer"
+
+msgid "تصویر فیش (حداکثر ۵ مگابایت)"
+msgstr "Receipt photo (max 5 MB)"
+
+msgid "تصویر نمونه جلد چسبی"
+msgstr "Sample book cover image"
+
+msgid "تصویر نمونه رول"
+msgstr "Sample roll image"
+
+msgid "تصویر نمونه لوازم تحریر"
+msgstr "Sample stationery image"
+
+msgid "تعداد محصول در هر صفحه"
+msgstr "Products per page"
+
+msgid "تعداد:"
+msgstr "Quantity:"
+
+msgid "تغییر حالت روز و شب"
+msgstr "Toggle light/dark mode"
+
+msgid "تلفن تماس"
+msgstr "Phone"
+
+msgid "تماس با"
+msgstr "Contact"
+
+msgid "تماس با ما"
+msgstr "Contact us"
+
+msgid "تماس با ما | کاتیکا"
+msgstr "Contact us | KTK"
+
+msgid "تماس با پشتیبانی"
+msgstr "Contact support"
+
+msgid "تماس با کاتیکا"
+msgstr "Contact KTK"
+
+msgid "توجه: این فرایند فقط سفارش را ثبت می‌کند و پرداخت آنلاین انجام نمی‌شود."
+msgstr "Note: this places an order but does not process an online payment."
+
+msgid "توسعه بازار و افزایش فرصت‌های فروش"
+msgstr "Expanding markets and sales opportunities"
+
+msgid "توضیحات تکمیلی"
+msgstr "Additional notes"
+
+msgid "تولیدکننده انواع پخش عمده و تک‌جلد چسبی"
+msgstr "Maker of adhesive book-cover products for retail and wholesale"
+
+msgid "تومان"
+msgstr "Toman"
+
+msgid "تکمیل اطلاعات سفارش"
+msgstr "Checkout details"
+
+msgid "تک‌جلد"
+msgstr "Book cover"
+
+msgid "تک‌جلد چسبی"
+msgstr "Self-adhesive book cover"
+
+msgid "ثبت درخواست"
+msgstr "Submit request"
+
+msgid "ثبت سفارش | KTK"
+msgstr "Checkout | KTK"
+
+msgid "ثبت سفارش به معنای تأیید دریافت وجه نیست."
+msgstr "Placing an order does not confirm payment."
+
+msgid "ثبت نهایی سفارش ←"
+msgstr "Place order →"
+
+msgid "ثبت‌نام"
+msgstr "Sign up"
+
+msgid "ثبت‌نام | کاتیکا"
+msgstr "Sign up | KTK"
+
+msgid "ثبت‌نام و ورود"
+msgstr "Sign up and sign in"
+
+msgid "ثبت‌نام کنید"
+msgstr "Create account"
+
+msgid "جدیدترین"
+msgstr "Newest"
+
+msgid "جستجو"
+msgstr "Search"
+
+msgid "جستجوی محصولات"
+msgstr "Search products"
+
+msgid "جستجوی محصولات، کد کالا و ..."
+msgstr "Search products or SKU…"
+
+msgid "جمع کل"
+msgstr "Total"
+
+msgid "حالت نمایش محصولات"
+msgstr "Product layout"
+
+msgid "حداقل قیمت"
+msgstr "Minimum price"
+
+msgid "حداکثر قیمت"
+msgstr "Maximum price"
+
+msgid "حذف"
+msgstr "Remove"
+
+msgid "حذف جست‌وجو"
+msgstr "Clear search"
+
+msgid "حساب دارید؟"
+msgstr "Already have an account?"
+
+msgid "حساب من"
+msgstr "My account"
+
+msgid "حساب من | کاتیکا"
+msgstr "My account | KTK"
+
+msgid "حساب ندارید؟"
+msgstr "Don't have an account?"
+
+msgid "خانه"
+msgstr "Home"
+
+msgid "خروج از حساب"
+msgstr "Sign out"
+
+msgid "خرید عمده و تکی"
+msgstr "Wholesale & retail"
+
+msgid "خلاصه سبد خرید"
+msgstr "Order summary"
+
+msgid "خوش آمدید،"
+msgstr "Welcome,"
+
+msgid "درباره کاتیکا"
+msgstr "About KTK"
+
+msgid "درخواست لغو یا مرجوعی"
+msgstr "Cancellation or return request"
+
+msgid "درخواست لغو یا مرجوعی سفارش"
+msgstr "Request order cancellation or return"
+
+msgid "درخواست همکاری"
+msgstr "Partnership request"
+
+msgid "دسترسی سریع"
+msgstr "Quick links"
+
+msgid "دسته‌بندی"
+msgstr "Category"
+
+msgid "دسته‌بندی از پنل مالک اضافه می‌شود."
+msgstr "Categories are managed in the owner panel."
+
+msgid "دسته‌بندی محصولات"
+msgstr "Product categories"
+
+msgid "دسته‌بندی‌ها"
+msgstr "Categories"
+
+msgid "دسته‌بندی‌های منتخب"
+msgstr "Featured categories"
+
+msgid "رشد مشترک"
+msgstr "Grow together"
+
+msgid "روش تسویه: هنگام تحویل. درگاه آنلاین فعال نیست."
+msgstr "Payment method: on delivery. Online payment is not enabled."
+
+msgid "ساخت حساب کاربری"
+msgstr "Create an account"
+
+msgid "سبد خرید"
+msgstr "Shopping cart"
+
+msgid "سبد خرید | KTK"
+msgstr "Shopping cart | KTK"
+
+msgid "سبد خرید خالی است"
+msgstr "Your cart is empty"
+
+msgid "سفارش ثبت شد | KTK"
+msgstr "Order placed | KTK"
+
+msgid "سفارش شما ثبت شد"
+msgstr "Your order has been placed"
+
+msgid "سفارش‌ها در نسخه فعلی به شماره تماس هنگام ثبت سفارش وابسته هستند؛ تاریخچه سفارش‌ها هنوز به حساب کاربری متصل نشده است."
+msgstr "Orders are linked to the phone number provided at checkout. Account order history is not available yet."
+
+msgid "شماره تماس"
+msgstr "Phone number"
+
+msgid "شماره تماس هنوز ثبت نشده است."
+msgstr "Phone number is not available yet."
+
+msgid "شماره سفارش:"
+msgstr "Order number:"
+
+msgid "صفحه اصلی کاتیکا"
+msgstr "KTK homepage"
+
+msgid "صفحه بعد"
+msgstr "Next page"
+
+msgid "صفحه قبل"
+msgstr "Previous page"
+
+msgid "صفحه‌بندی محصولات"
+msgstr "Product pagination"
+
+msgid "ضمانت اصالت کالا"
+msgstr "Genuine product guarantee"
+
+msgid "فارسی"
+msgstr "فارسی"
+
+msgid "فعال کردن حالت شب"
+msgstr "Enable dark mode"
+
+msgid "فیش"
+msgstr "Receipt"
+
+msgid "فیش کارت به کارت"
+msgstr "Bank transfer receipt"
+
+msgid "فیشی ثبت نشده است."
+msgstr "No receipt has been uploaded."
+
+msgid "فیلتر محصولات"
+msgstr "Filter products"
+
+msgid "فیلترها"
+msgstr "Filters"
+
+msgid "فیلترها یا عبارت جست‌وجو را تغییر دهید."
+msgstr "Try adjusting the filters or search term."
+
+msgid "قبلی"
+msgstr "Previous"
+
+msgid "قدیمی‌ترین"
+msgstr "Oldest"
+
+msgid "قیمت از"
+msgstr "Price from"
+
+msgid "قیمت تا"
+msgstr "Price to"
+
+msgid "لوازم"
+msgstr "Supplies"
+
+msgid "لوازم تحریر"
+msgstr "Stationery"
+
+msgid "لیست محصولات"
+msgstr "Product list"
+
+msgid "مبلغ:"
+msgstr "Amount:"
+
+msgid "متن پیام"
+msgstr "Message"
+
+msgid "مجموع سفارش"
+msgstr "Order total"
+
+msgid "مجموعه کامل پوشش‌های چسبی، محصولات عمده و لوازم تحریر"
+msgstr "A full range of adhesive covers, wholesale rolls and stationery"
+
+msgid "محافظت بهتر،"
+msgstr "Better protection,"
+
+msgid "محدوده قیمت"
+msgstr "Price range"
+
+msgid "محصول"
+msgstr "Product"
+
+msgid "محصول کاتیکا"
+msgstr "KTK product"
+
+msgid "محصولات"
+msgstr "Products"
+
+msgid "محصولات از پنل مالک اضافه می‌شوند. اگر جست‌وجو کرده‌اید، عبارت دیگری را امتحان کنید."
+msgstr "Products are added from the owner panel. Try a different search."
+
+msgid "محصولات کاتیکا"
+msgstr "KTK products"
+
+msgid "محصولات کاتیکا | خرید جلد چسبی و لوازم تحریر"
+msgstr "KTK Products | Self-adhesive book covers"
+
+msgid "محصولی برای نمایش وجود ندارد"
+msgstr "No products to display"
+
+msgid "محصولی پیدا نشد"
+msgstr "No products found"
+
+msgid "مرتب‌سازی محصولات"
+msgstr "Sort products"
+
+msgid "مرتب‌سازی:"
+msgstr "Sort by:"
+
+msgid "مزیت‌های خرید از کاتیکا"
+msgstr "Why shop at KTK"
+
+msgid "مشاهده محصولات"
+msgstr "Explore products"
+
+msgid "مشاهده همه محصولات"
+msgstr "View all products"
+
+msgid "مشاوره تخصصی"
+msgstr "Product advice"
+
+msgid "معرفی مجموعه محصولات کاتیکا"
+msgstr "Introducing the KTK collection"
+
+msgid "معرفی محصولات کاتیکا"
+msgstr "Introducing KTK products"
+
+msgid "معرفی کاتیکا"
+msgstr "Meet KTK"
+
+msgid "منتخب"
+msgstr "Featured"
+
+msgid "منوی اصلی"
+msgstr "Main navigation"
+
+msgid "منوی موبایل"
+msgstr "Mobile navigation"
+
+msgid "مواد اولیه مرغوب"
+msgstr "Premium materials"
+
+msgid "موضوع و توضیحات خود را ثبت کنید. پاسخ از طریق راه ارتباطی اعلام‌شده پیگیری می‌شود."
+msgstr "Describe your request. We'll follow up using your contact details."
+
+msgid "موضوع پیام"
+msgstr "Message subject"
+
+msgid "نام مجموعه"
+msgstr "Company name"
+
+msgid "نام محصول"
+msgstr "Product name"
+
+msgid "نام محصول یا کد کالا"
+msgstr "Product name or SKU"
+
+msgid "نام و نام خانوادگی"
+msgstr "Full name"
+
+msgid "نام کاربری یا رمز عبور نادرست است."
+msgstr "Incorrect username or password."
+
+msgid "ناموجود"
+msgstr "Out of stock"
+
+msgid "نتایج جست‌وجو برای «"
+msgstr "Search results for “"
+
+msgid "نشانی دفتر به‌زودی درج می‌شود."
+msgstr "Address will be published soon."
+
+msgid "نمایش"
+msgstr "Display"
+
+msgid "نمایش شبکه‌ای"
+msgstr "Grid view"
+
+msgid "نمایش لیستی"
+msgstr "List view"
+
+msgid "نمایش همه محصولات"
+msgstr "View all products"
+
+msgid "نمایش:"
+msgstr "Show:"
+
+msgid "نوع همکاری"
+msgstr "Partnership type"
+
+msgid "همراهی در تمام مراحل همکاری"
+msgstr "Support at every stage of our partnership"
+
+msgid "همه دسته‌بندی‌ها"
+msgstr "All categories"
+
+msgid "همه محصولات"
+msgstr "All products"
+
+msgid "همکاری با"
+msgstr "Partner with"
+
+msgid "همکاری با ما"
+msgstr "Partner with us"
+
+msgid "همکاری با ما | کاتیکا"
+msgstr "Partnership | KTK"
+
+msgid "همکاری بلندمدت"
+msgstr "Long-term partnership"
+
+msgid "هنوز محصولی برای فروش ثبت نشده است. مالک می‌تواند از پنل محصولات را اضافه کند."
+msgstr "No products are listed yet. The owner can add them from the dashboard."
+
+msgid "و لوازم تحریر با کیفیت بالا"
+msgstr "and quality stationery"
+
+msgid "وارد شوید"
+msgstr "Sign in"
+
+msgid "وب‌سایت"
+msgstr "Website"
+
+msgid "ورود / ثبت‌نام"
+msgstr "Sign in / Sign up"
+
+msgid "ورود به حساب"
+msgstr "Sign in"
+
+msgid "ورود به حساب | کاتیکا"
+msgstr "Sign in | KTK"
+
+msgid "ورود به حساب کاتیکا"
+msgstr "Sign in to KTK"
+
+msgid "٪"
+msgstr "%"
+
+msgid "پاک کردن فیلترها"
+msgstr "Clear filters"
+
+msgid "پخش عمده"
+msgstr "Wholesale"
+
+msgid "پخش عمده (رول و متراژ)"
+msgstr "Wholesale rolls & lengths"
+
+msgid "پرفروش"
+msgstr "Bestseller"
+
+msgid "پشتیبانی | KTK"
+msgstr "Support | KTK"
+
+msgid "پشتیبانی حرفه‌ای"
+msgstr "Professional support"
+
+msgid "پشتیبانی سفارش‌ها"
+msgstr "Order support"
+
+msgid "پشتیبانی و مشاوره"
+msgstr "Support & consultation"
+
+msgid "پنل مدیریت"
+msgstr "Management panel"
+
+msgid "پوشش حرفه‌ای برای"
+msgstr "Professional protection for"
+
+msgid "پیشنهاد ویژه"
+msgstr "Special offer"
+
+msgid "چسبی"
+msgstr "Adhesive"
+
+msgid "کاتیکا"
+msgstr "KTK"
+
+msgid "کاتیکا | KTK"
+msgstr "KTK | Official Store"
+
+msgid "کاتیکا | KTK — جلد چسبی کتاب و محصولات منتخب"
+msgstr "KTK — Self-adhesive book covers and selected products"
+
+msgid "کاتیکا با تمرکز بر محصولات پوشش و جلد چسبی کتاب، تجربه‌ای ساده و قابل اعتماد برای تهیه محصولات موردنیاز شما فراهم می‌کند."
+msgstr "KTK makes it easy to buy reliable book-covering and protective products."
+
+msgid "کاتیکا؛ راهکاری مناسب برای پوشش و محافظت از کتاب‌ها و دفترهای شما."
+msgstr "KTK — dependable protection for your books and notebooks."
+
+msgid "کاهش تعداد"
+msgstr "Decrease quantity"
+
+msgid "کتاب‌ها و دفترهای شما"
+msgstr "your books and notebooks"
+
+msgid "کنترل اسلایدر"
+msgstr "Slide controls"
+
+msgid "کیفیت تضمین‌شده"
+msgstr "Quality assured"
+
+msgid "گران‌ترین"
+msgstr "Price: High to low"
+
+msgid "۱۲ کالا"
+msgstr "12 products"
+
+msgid "۲۴ کالا"
+msgstr "24 products"
+
+msgid "۳۶ کالا"
+msgstr "36 products"
+
+msgid "تعداد انتخاب‌شده معتبر نیست."
+msgstr "Invalid quantity selected."
+
+msgid "موجودی برای این تعداد کافی نیست."
+msgstr "Not enough stock for this quantity."
+
+msgid "محصول به سبد خرید اضافه شد."
+msgstr "Added to cart."
+
+msgid "سبد خرید خالی است."
+msgstr "Your cart is empty."
+
+msgid "لطفاً کمی بعد دوباره نظر ثبت کنید."
+msgstr "Please wait before submitting another review."
+
+msgid "ارسال نظر نامعتبر است."
+msgstr "Invalid review submission."
+
+msgid "نظر شما ثبت شد و پس از تأیید نمایش داده می‌شود."
+msgstr "Your review was submitted and will appear after moderation."
+
+msgid "اطلاعات نظر معتبر نیست. همه فیلدها و امتیاز را بررسی کنید."
+msgstr "Invalid review: check all fields and the rating."
+
+msgid "محصول از علاقه‌مندی‌ها حذف شد."
+msgstr "Removed from wishlist."
+
+msgid "محصول به علاقه‌مندی‌ها اضافه شد."
+msgstr "Added to wishlist."
+
+msgid "لطفاً کمی بعد دوباره تلاش کنید."
+msgstr "Please try again shortly."
+
+msgid "درخواست پشتیبانی ثبت شد. فروشگاه از طریق اطلاعات تماس شما پیگیری خواهد کرد."
+msgstr "Your support request was submitted. The team will contact you."
+
+msgid "برای این سفارش یک درخواست باز یا تأییدشده وجود دارد."
+msgstr "This order already has an active return request."
+
+msgid "درخواست شما ثبت شد و پس از بررسی پاسخ داده می‌شود."
+msgstr "Your request has been submitted for review."
+
+msgid "برای این سفارش فیش در انتظار بررسی یا پذیرفته‌شده دارید."
+msgstr "This order already has a pending or accepted receipt."
+
+msgid "تصویر فیش بارگذاری شد و در انتظار بررسی قرار دارد."
+msgstr "Receipt uploaded and awaiting review."
+
+msgid "تصویر فیش معتبر نیست؛ فقط PNG، JPEG یا WEBP تا ۵ مگابایت."
+msgstr "Invalid receipt image; PNG, JPEG or WEBP up to 5 MB only."
+
+msgid "پیام شما با موفقیت ثبت شد. در اولین فرصت با شما تماس خواهیم گرفت."
+msgstr "Your message was received. We will contact you soon."
+
+msgid "درخواست همکاری شما ثبت شد. پس از بررسی با شما تماس می‌گیریم."
+msgstr "Your partnership request was received. We will be in touch after review."
+
+msgid "پیگیری سفارش"
+msgstr "Order follow-up"
+
+msgid "پشتیبانی محصولات"
+msgstr "Product support"
+
+msgid "خرید عمده"
+msgstr "Wholesale purchase"
+
+msgid "همکاری"
+msgstr "Partnership"
+
+msgid "سایر موارد"
+msgstr "Other"
+
+msgid "تبلیغات و بازاریابی"
+msgstr "Advertising & marketing"
+
+msgid "سایر همکاری‌ها"
+msgstr "Other partnerships"
+
+msgid "محصول از مقایسه حذف شد."
+msgstr "Removed from comparison."
+
+msgid "حداکثر چهار محصول قابل مقایسه هستند."
+msgstr "Compare up to four products."
+
+msgid "محصول به مقایسه اضافه شد."
+msgstr "Added to comparison."
+
+msgid "حذف از مقایسه"
+msgstr "Remove from comparison"
+
+msgid "افزودن به مقایسه"
+msgstr "Add to comparison"
+
+msgid "مشاهده مقایسه"
+msgstr "View comparison"
+
+msgid "مقایسه محصولات"
+msgstr "Compare products"
+
+msgid "ویژگی"
+msgstr "Feature"
+
+msgid "قیمت"
+msgstr "Price"
+
+msgid "موجودی"
+msgstr "Availability"
+
+msgid "برای مقایسه، محصول دیگری انتخاب کنید."
+msgstr "Select another product to compare."
+
+msgid "هنوز محصولی برای مقایسه انتخاب نشده است."
+msgstr "No products selected for comparison."
+
+msgid "بازگشت به محصولات"
+msgstr "Back to products"
+
+msgid "شماره تماس معتبر وارد کنید (۸ تا ۱۵ رقم)."
+msgstr "Enter a valid 8–15 digit phone number."
+
+msgid "حجم تصویر باید کمتر از ۵ مگابایت باشد."
+msgstr "The image must be under 5 MB."
+
+msgid "فقط تصویر PNG یا JPEG یا WEBP مجاز است."
+msgstr "Only PNG, JPEG and WEBP images are allowed."
+
+msgid "موضوع"
+msgstr "Subject"
+
+msgid "نام"
+msgstr "Name"
+
+msgid "Breadcrumb"
+msgstr "Breadcrumb"
+
+msgid "Brand"
+msgstr "Brand"
+
+msgid "SKU"
+msgstr "SKU"
+
+msgid "Material"
+msgstr "Material"
+
+msgid "Dimensions"
+msgstr "Dimensions"
+
+msgid "Packaging"
+msgstr "Packaging"
+
+msgid "Application"
+msgstr "Application"
+
+msgid "Select language"
+msgstr "Select language"
+
+msgid "Apply"
+msgstr "Apply"
+
+msgid "گالری محصول"
+msgstr "Product gallery"
+
+msgid "انتخاب تصویر محصول"
+msgstr "Choose product photo"
+
+msgid "تصویر اصلی"
+msgstr "Main photo"
+
+msgid "تصویر نمونه"
+msgstr "Sample image"
+
+msgid "اطلاعات محصول"
+msgstr "Product information"
+
+msgid "توضیحات این محصول به‌زودی اضافه می‌شود."
+msgstr "Product description coming soon."
+
+msgid "از ۵ ستاره"
+msgstr "out of 5 stars"
+
+msgid "دیدگاه تأییدشده"
+msgstr "verified reviews"
+
+msgid "موجود در انبار"
+msgstr "In stock"
+
+msgid "عدد"
+msgstr "pcs"
+
+msgid "تعداد"
+msgstr "Quantity"
+
+msgid "افزودن به سبد خرید"
+msgstr "Add to cart"
+
+msgid "علاقه‌مندی‌ها"
+msgstr "Wishlist"
+
+msgid "افزودن به علاقه‌مندی‌ها"
+msgstr "Add to wishlist"
+
+msgid "حذف از علاقه‌مندی‌ها"
+msgstr "Remove from wishlist"
+
+msgid "ضمانت کیفیت"
+msgstr "Quality guarantee"
+
+msgid "اصالت کالا"
+msgstr "Authentic products"
+
+msgid "پشتیبانی"
+msgstr "Support"
+
+msgid "مشاوره محصول"
+msgstr "Product advice"
+
+msgid "ویژگی‌های محصول"
+msgstr "Product features"
+
+msgid "کاربرد"
+msgstr "Application"
+
+msgid "جنس"
+msgstr "Material"
+
+msgid "ابعاد استاندارد"
+msgstr "Standard dimensions"
+
+msgid "نوع بسته‌بندی"
+msgstr "Packaging type"
+
+msgid "کد محصول"
+msgstr "SKU"
+
+msgid "اطلاعات بیشتر"
+msgstr "More information"
+
+msgid "توضیحات محصول"
+msgstr "Product description"
+
+msgid "مشخصات فنی"
+msgstr "Technical specifications"
+
+msgid "دیدگاه خریداران"
+msgstr "Customer reviews"
+
+msgid "اطلاعات فنی ثبت نشده است."
+msgstr "No technical information available."
+
+msgid "هنوز نظری برای این محصول ثبت نشده است."
+msgstr "No reviews for this product yet."
+
+msgid "ثبت دیدگاه"
+msgstr "Write a review"
+
+msgid "دیدگاه‌ها پس از تأیید مدیر نمایش داده می‌شوند."
+msgstr "Reviews appear after moderation."
+
+msgid "ثبت نظر"
+msgstr "Submit review"
+
+msgid "محصولات مرتبط"
+msgstr "Related products"
+
+msgid "مشاهده همه"
+msgstr "View all"
+
+msgid "مشاهده محصول"
+msgstr "View product"
+
+msgid "شماره تماس یا ایمیل"
+msgstr "Phone or email"
+
+msgid "آدرس تحویل"
+msgstr "Delivery address"
+
+msgid "توضیحات"
+msgstr "Notes"
+
+msgid "شرح درخواست"
+msgstr "Request details"
+
+msgid "دلیل لغو یا مرجوعی"
+msgstr "Cancellation or return reason"
+
+msgid "تصویر فیش کارت به کارت"
+msgstr "Transfer receipt image"
+
+msgid "موضوع پیام *"
+msgstr "Subject *"
+
+msgid "نوع همکاری *"
+msgstr "Partnership type *"
+
+msgid "نام و نام خانوادگی *"
+msgstr "Full name *"
+
+msgid "شماره تماس *"
+msgstr "Phone number *"
+
+msgid "نام مجموعه (در صورت وجود)"
+msgstr "Company name (optional)"
+
+msgid "متن پیام خود را بنویسید ..."
+msgstr "Write your message…"
+
+msgid "توضیحات تکمیلی (اختیاری)"
+msgstr "Additional details (optional)"
+
+msgid "مشاوره خرید"
+msgstr "Purchase consultation"
+
+msgid "پشتیبانی سفارش"
+msgstr "Order support"
+
+msgid "نمایندگی فروش"
+msgstr "Sales agency"
+
+msgid "سایر"
+msgstr "Other"
+
+msgid "همکاری سازمانی"
+msgstr "Corporate partnership"
+
+msgid "تأمین محصول"
+msgstr "Product supply"
+
+msgid "پخش و توزیع"
+msgstr "Distribution"
+
+msgid "تأمین کالا"
+msgstr "Supply"
+
+msgid "همکاری تبلیغاتی"
+msgstr "Marketing partnership"
+
+
+msgid "اخبار و رویدادها"
+msgstr "News & Events"
+
+msgid "پروفایل"
+msgstr "Profile"
+
+msgid "پنل مالکیت"
+msgstr "Owner panel"
+
+msgid "حساب کاربری"
+msgstr "Account"
+
+msgid "منوی حساب کاربری"
+msgstr "Account menu"

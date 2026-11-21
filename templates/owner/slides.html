@@ -1,0 +1,6 @@
+{% extends 'owner/base.html' %}
+{% block title %}🖼️ مدیریت اسلایدر | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">HERO SLIDER</span><h1>🖼️ مدیریت اسلایدر</h1><p>تصاویر صفحه نخست و ترتیب نمایش آن‌ها</p></div><a class="btn btn-primary" href="{% url 'owner:slide_new' %}">+ افزودن اسلایدر</a></div>
+<section class="panel"><div class="table-wrap"><table><thead><tr><th>تصویر</th><th>عنوان</th><th>زیرعنوان</th><th>ترتیب</th><th>وضعیت</th><th>عملیات</th></tr></thead><tbody>{% for slide in slides %}<tr><td>{% if slide.image %}<img src="{{ slide.image.url }}" alt="" width="100">{% endif %}</td><td>{{ slide.title }}</td><td>{{ slide.subtitle|default:'—' }}</td><td>{{ slide.position }}</td><td>{{ slide.is_active|yesno:'فعال,غیرفعال' }}</td><td><a href="{% url 'owner:slide_edit' slide.pk %}">ویرایش</a><form method="post" action="{% url 'owner:slide_delete' slide.pk %}" onsubmit="return confirm('این اسلاید حذف شود؟')">{% csrf_token %}<button type="submit" class="text-danger">حذف</button></form></td></tr>{% empty %}<tr><td colspan="6">هنوز اسلایدی ثبت نشده است.</td></tr>{% endfor %}</tbody></table></div></section>
+{% endblock %}

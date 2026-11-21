@@ -1,0 +1,188 @@
+{% load static i18n %}
+<!doctype html>
+<html lang="{{ LANGUAGE_CODE|default:'fa' }}" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% else %}ltr{% endif %}" data-ktk-theme="day">
+<head>
+  <script>(function(){var r=document.documentElement,t='light';try{var saved=localStorage.getItem('ktk-theme');if(saved==='dark'||saved==='light'){t=saved}else if(localStorage.getItem('ktk-owner-theme')==='night'){t='dark'}localStorage.setItem('ktk-theme',t)}catch(e){}r.dataset.ktTheme=t;r.dataset.ktkTheme=t==='dark'?'night':'day';})();</script>
+  {% if request.resolver_match.url_name == 'home' %}
+  <script>
+    (function () {
+      var root = document.documentElement;
+      try {
+        if (!sessionStorage.getItem('ktk-brand-intro-seen')) {
+          sessionStorage.setItem('ktk-brand-intro-seen', '1');
+          root.classList.add('ktk-brand-intro-pending');
+        }
+      } catch (error) {
+        root.classList.add('ktk-brand-intro-pending');
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="{% static 'css/katika-brand-intro.css' %}?v=20261119-3">
+  {% endif %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="{{ site_store.primary_color|default:'#C8102E' }}">
+  <meta name="description" content="کاتیکا | فروشگاه آنلاین جلد چسبی کتاب و محصولات مرتبط">
+  <title>{% block title %}{% trans "کاتیکا | KTK" %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <link rel="stylesheet" href="{% static 'css/katika-storefront.css' %}">
+  <link rel="stylesheet" href="{% static 'css/katika-theme.css' %}">
+  <link rel="stylesheet" href="{% static 'css/katika-multilingual.css' %}?v=20261119-2">
+  {% if site_store and site_store.favicon %}<link rel="icon" href="{{ site_store.favicon.url }}">{% endif %}
+  {% if site_store %}<style>:root{--red:{{ site_store.primary_color|default:'#C8102E' }};}</style>{% endif %}
+  <link rel="stylesheet" href="{% static 'css/katika-contact.css' %}">
+  <link rel="stylesheet" href="{% static 'css/ktk-account-menu.css' %}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="katika-public {% block body_class %}{% endblock %}">
+  {% if request.resolver_match.url_name == 'home' %}
+  <div id="ktk-brand-intro" class="ktk-brand-intro" role="img" aria-label="کاتیکا؛ اولین تولیدکننده جلد چسبی در ایران">
+    <picture>
+      <source media="(max-width: 600px) and (orientation: portrait)" srcset="{% static 'images/brand-intro/katika-intro-screen-mobile.png' %}">
+      <img src="{% static 'images/brand-intro/katika-intro-screen.png' %}" alt="کاتیکا؛ اولین تولیدکننده جلد چسبی در ایران" width="1672" height="941" fetchpriority="high" decoding="async">
+    </picture>
+  </div>
+  {% endif %}
+  <div class="kt-topline">
+    <div class="kt-site-width kt-topline-inner">
+      <div class="kt-top-contact">
+        <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#phone"></use></svg>
+        <a href="{% url 'support_request' %}">{% trans "پشتیبانی و مشاوره" %}{% if site_store and site_store.contact_phone %} • <bdi>{{ site_store.contact_phone }}</bdi>{% endif %}</a>
+      </div>
+      <div class="kt-top-advantages">
+        <span><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#shield"></use></svg> {% trans "ضمانت اصالت کالا" %}</span>
+        <span class="kt-top-separator" aria-hidden="true"></span>
+        <span><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#truck"></use></svg> {% trans "ارسال سریع به سراسر کشور" %}</span>
+      </div>
+    </div>
+  </div>
+  <header class="kt-header">
+    <div class="kt-site-width kt-nav">
+      <a href="{% url 'home' %}" class="kt-brand" aria-label="{% trans "صفحه اصلی کاتیکا" %}">
+        {% if site_store and site_store.logo %}<img class="kt-logo-upload" src="{{ site_store.logo.url }}" alt="{{ site_store.name }}">
+        {% else %}<img class="kt-brand-reference-logo" src="{% static 'images/katika-reference-logo.webp' %}" alt="{% trans "KTK — کاتیکا" %}" width="205" height="61">{% endif %}
+      </a>
+      <nav class="kt-links" aria-label="{% trans "منوی اصلی" %}">
+        <a class="kt-nav-home {% if request.resolver_match.url_name == 'home' %}kt-active{% endif %}" href="{% url 'home' %}">{% trans "خانه" %}</a>
+        <details class="kt-products-menu"><summary class="{% if request.resolver_match.url_name == 'catalog' %}kt-active{% endif %}">{% trans "محصولات" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-down"></use></svg></summary>
+          <div class="kt-dropdown">
+            <a href="{% url 'catalog' %}">{% trans "همه محصولات" %}</a>
+            {% for category in categories %}<a href="{% url 'catalog' %}?category={{ category.slug|urlencode }}">{{ category.display_name }}</a>{% empty %}
+            <a href="{% url 'catalog' %}">{% trans "دسته‌بندی محصولات" %}</a>{% endfor %}
+          </div>
+        </details>
+        <a href="{% url 'about_katika' %}" class="{% if request.resolver_match.url_name == 'about_katika' %}kt-active{% endif %}">{% trans "درباره کاتیکا" %}</a>
+        <a href="{% url 'news_events' %}" class="{% if request.resolver_match.url_name == 'news_events' or request.resolver_match.url_name == 'news_detail' %}kt-active{% endif %}">{% trans "اخبار و رویدادها" %}</a>
+        <a href="{% url 'cooperation' %}">{% trans "همکاری با ما" %}</a>
+        <a href="{% url 'contact_us' %}" class="{% if request.resolver_match.url_name == 'contact_us' %}kt-active{% endif %}">{% trans "تماس با ما" %}</a>
+      </nav>
+      <form class="kt-nav-search" action="{% url 'catalog' %}" method="get" role="search">
+        <input type="search" name="q" value="{{ query|default:'' }}" placeholder="{% trans "جستجوی محصولات، کد کالا و ..." %}" aria-label="{% trans "جستجوی محصولات" %}">
+        <button type="submit" aria-label="{% trans "جستجو" %}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#search"></use></svg></button>
+      </form>
+      <div class="kt-nav-actions">
+        <details class="kt-language-menu" data-kt-language-menu>
+          <summary class="kt-language-summary" aria-label="Language selector">
+            <span class="kt-language-arrow" aria-hidden="true">⌄</span>
+            {% if LANGUAGE_CODE == 'en' %}
+              <span class="kt-language-current-code">EN</span>
+              <span class="kt-language-current-flag" aria-hidden="true">🇬🇧</span>
+            {% elif LANGUAGE_CODE == 'zh-hans' %}
+              <span class="kt-language-current-code">ZH</span>
+              <span class="kt-language-current-flag" aria-hidden="true">🇨🇳</span>
+            {% else %}
+              <span class="kt-language-current-code">FA</span>
+              <span class="kt-language-current-flag" aria-hidden="true">🇮🇷</span>
+            {% endif %}
+          </summary>
+          <form class="kt-language-dropdown" action="{% url 'set_language' %}" method="post" aria-label="Choose language">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.get_full_path }}">
+            <button type="submit" name="language" value="fa" class="kt-language-option {% if LANGUAGE_CODE == 'fa' %}is-active{% endif %}">
+              <span class="kt-language-check" aria-hidden="true">{% if LANGUAGE_CODE == 'fa' %}✓{% endif %}</span>
+              <span class="kt-language-option-text"><strong>فارسی</strong><small>FA</small></span>
+              <span class="kt-language-flag" aria-hidden="true">🇮🇷</span>
+            </button>
+            <button type="submit" name="language" value="en" class="kt-language-option {% if LANGUAGE_CODE == 'en' %}is-active{% endif %}">
+              <span class="kt-language-check" aria-hidden="true">{% if LANGUAGE_CODE == 'en' %}✓{% endif %}</span>
+              <span class="kt-language-option-text"><strong>English</strong><small>EN</small></span>
+              <span class="kt-language-flag" aria-hidden="true">🇬🇧</span>
+            </button>
+            <button type="submit" name="language" value="zh-hans" class="kt-language-option {% if LANGUAGE_CODE == 'zh-hans' %}is-active{% endif %}">
+              <span class="kt-language-check" aria-hidden="true">{% if LANGUAGE_CODE == 'zh-hans' %}✓{% endif %}</span>
+              <span class="kt-language-option-text"><strong>中文</strong><small>ZH</small></span>
+              <span class="kt-language-flag" aria-hidden="true">🇨🇳</span>
+            </button>
+          </form>
+        </details>
+        <button class="kt-theme-switch" type="button" data-kt-theme-toggle aria-label="{% trans "فعال کردن حالت شب" %}" aria-pressed="false" title="{% trans "تغییر حالت روز و شب" %}">
+          <svg class="kt-theme-icon-moon" aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#moon"></use></svg>
+          <svg class="kt-theme-icon-sun" aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#sun"></use></svg>
+        </button>
+        <a class="kt-cart" href="{% url 'cart' %}" aria-label="سبد خرید، {{ cart_count|default:0 }} کالا"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#cart"></use></svg><span class="kt-cart-count">{{ cart_count|default:0 }}</span></a>
+        {% if request.user.is_authenticated %}
+          <details class="kt-account-menu" data-kt-account-menu>
+            <summary class="kt-account-trigger" aria-label="{% trans 'منوی حساب کاربری' %}">
+              <svg class="kt-account-user-icon" aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#user"></use></svg>
+              <span class="kt-account-username" dir="auto">{{ request.user.get_full_name|default:request.user.username }}</span>
+              <svg class="kt-account-chevron" aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-down"></use></svg>
+            </summary>
+            <div class="kt-account-dropdown">
+              <div class="kt-account-dropdown-head">
+                <span class="kt-account-avatar" aria-hidden="true">{{ request.user.username|first|upper }}</span>
+                <div><small>{% trans "حساب کاربری" %}</small><strong dir="auto">{{ request.user.username }}</strong></div>
+              </div>
+              <nav class="kt-account-dropdown-links" aria-label="{% trans 'حساب کاربری' %}">
+                <a href="{% if is_store_member %}{% url 'owner:profile' %}{% else %}{% url 'customer_account' %}{% endif %}">
+                  <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#user"></use></svg><span>{% trans "پروفایل" %}</span>
+                </a>
+                <a href="{% url 'support_request' %}">
+                  <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#headset"></use></svg><span>{% trans "پشتیبانی" %}</span>
+                </a>
+                <a href="{% url 'cart' %}">
+                  <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#cart"></use></svg><span>{% trans "سبد خرید" %}</span>
+                  <span class="kt-account-cart-count">{{ cart_count|default:0 }}</span>
+                </a>
+                {% if is_store_owner %}
+                  <a href="{% url 'owner:home' %}">
+                    <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#shield"></use></svg><span>{% trans "پنل مالکیت" %}</span>
+                  </a>
+                {% endif %}
+              </nav>
+              <form class="kt-account-logout" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">
+                  <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg>
+                  <span>{% trans "خروج از حساب" %}</span>
+                </button>
+              </form>
+            </div>
+          </details>
+        {% else %}
+          <a class="kt-account" href="{% url 'login' %}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#user"></use></svg><span>{% trans "ورود / ثبت‌نام" %}</span></a>
+        {% endif %}
+      </div>
+      <details class="kt-mobile-menu"><summary aria-label="{% trans "باز کردن منوی سایت" %}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#menu"></use></svg></summary>
+        <nav class="kt-mobile-dropdown" aria-label="{% trans "منوی موبایل" %}">
+          <a href="{% url 'home' %}">{% trans "خانه" %}</a><a href="{% url 'catalog' %}">{% trans "دسته‌بندی‌ها" %}</a><a href="{% url 'catalog' %}">{% trans "محصولات" %}</a><a href="{% url 'about_katika' %}" class="{% if request.resolver_match.url_name == 'about_katika' %}kt-active{% endif %}">{% trans "درباره کاتیکا" %}</a>
+        <a href="{% url 'news_events' %}" class="{% if request.resolver_match.url_name == 'news_events' or request.resolver_match.url_name == 'news_detail' %}kt-active{% endif %}">{% trans "اخبار و رویدادها" %}</a>
+        <a href="{% url 'contact_us' %}" class="{% if request.resolver_match.url_name == 'contact_us' %}kt-active{% endif %}">{% trans "تماس با ما" %}</a><a href="{% url 'cooperation' %}">{% trans "همکاری با ما" %}</a><a href="{% url 'login' %}">{% trans "ورود به حساب" %}</a><a href="{% url 'register' %}">{% trans "ثبت‌نام" %}</a>
+        </nav>
+      </details>
+    </div>
+  </header>
+  {% if messages %}<section class="container alerts" aria-live="polite">{% for message in messages %}<div class="alert alert-{{ message.tags }}">{{ message }}</div>{% endfor %}</section>{% endif %}
+  {% block content %}{% endblock %}
+  <footer class="kt-footer" id="contact">
+    <div class="kt-site-width kt-footer-grid">
+      <div><a class="kt-footer-logo" href="{% url 'home' %}">KTK<span>®</span></a><p>{% if site_store and site_store.footer_text %}{{ site_store.display_footer_text }}{% else %}{% trans "کاتیکا؛ راهکاری مناسب برای پوشش و محافظت از کتاب‌ها و دفترهای شما." %}{% endif %}</p></div>
+      <div><h3>{% trans "دسترسی سریع" %}</h3><a href="{% url 'catalog' %}">{% trans "محصولات" %}</a><a href="{% url 'catalog' %}">{% trans "دسته‌بندی‌ها" %}</a><a href="{% url 'cart' %}">{% trans "سبد خرید" %}</a></div>
+      <div><h3>{% trans "ارتباط با کاتیکا" %}</h3><a href="{% url 'contact_us' %}">{% trans "تماس با کاتیکا" %}</a><a href="{% url 'cooperation' %}">{% trans "همکاری با ما" %}</a><a href="{% url 'support_request' %}">{% trans "پشتیبانی سفارش‌ها" %}</a>{% if site_store and site_store.contact_phone %}<p>{{ site_store.contact_phone }}</p>{% endif %}{% if site_store and site_store.contact_email %}<p>{{ site_store.contact_email }}</p>{% endif %}{% if site_store and site_store.instagram %}<a href="{{ site_store.instagram }}" target="_blank" rel="noopener noreferrer">{% trans "اینستاگرام" %}</a>{% endif %}</div>
+    </div>
+    <div class="kt-footer-bottom kt-site-width">{% trans "© KTK — فروشگاه کاتیکا" %}</div>
+  </footer>
+  <script defer src="{% static 'js/katika-theme.js' %}?v=20261119-2"></script>
+  {% if request.resolver_match.url_name == 'home' %}<script defer src="{% static 'js/katika-brand-intro.js' %}?v=20261119-3"></script>{% endif %}
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#c8102e">
+  <meta name="description" content="فروشگاه مستقل KTK">
+  <title>{% block title %}KTK | انتخابی متفاوت{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+  <div class="topline"><div class="container top-inner"><span>KTK — انتخاب با اطمینان</span><span>ارسال سریع · پشتیبانی پاسخگو · خرید آسان</span></div></div>
+  <header class="header">
+    <div class="container nav">
+      <a href="{% url 'home' %}" class="brand" aria-label="KTK صفحه اصلی"><span class="brand-mark">K</span><span><strong>KTK</strong><small>STORE</small></span></a>
+      <nav class="navlinks" aria-label="منو"><a href="{% url 'home' %}">فروشگاه</a><a href="{% url 'home' %}#products">محصولات</a><a href="{% url 'home' %}#about">درباره ما</a></nav>
+      <div class="nav-actions"><a href="{% url 'cart' %}" class="nav-cart">سبد خرید <span>◌</span></a><a href="{% url 'owner:home' %}" class="owner-link">پنل مالک ↗</a></div>
+    </div>
+  </header>
+  {% if messages %}<section class="container alerts">{% for message in messages %}<div class="alert alert-{{ message.tags }}">{{ message }}</div>{% endfor %}</section>{% endif %}
+  {% block content %}{% endblock %}
+  <footer class="footer"><div class="container footer-grid"><div><div class="brand footer-brand"><span class="brand-mark">K</span><span><strong>KTK</strong><small>STORE</small></span></div><p>هر محصول، یک انتخاب بهتر. فروشگاهی مستقل، سریع و آماده توسعه.</p></div><div><h3>دسترسی سریع</h3><a href="{% url 'home' %}">محصولات</a><a href="{% url 'cart' %}">سبد خرید</a><a href="{% url 'owner:home' %}">پنل مدیریت</a></div><div><h3>تماس با ما</h3><p>{% if site_store and site_store.contact_phone %}{{ site_store.contact_phone }}{% else %}راه‌های ارتباطی به‌زودی فعال می‌شود{% endif %}</p><p>{% if site_store and site_store.contact_email %}{{ site_store.contact_email }}{% endif %}</p></div></div><div class="footer-bottom container">© KTK · نسخه توسعه اولیه مستقل</div></footer>
+</body>
+</html>

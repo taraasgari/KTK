@@ -1,0 +1,24 @@
+{% extends 'owner/base.html' %}
+{% block title %}📊 داشبورد مدیریت | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">KTK / MANAGEMENT</span><h1>📊 داشبورد مدیریت</h1><p>خوش آمدید {{ user.get_full_name|default:user.username }}! بخش‌های مدیریتی فروشگاه</p></div>{% if is_owner %}<a href="{% url 'owner:team' %}" class="btn btn-primary"><i class="fas fa-user-shield ml-2"></i> مدیریت ادمین‌ها</a>{% endif %}</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+  <div class="rounded-2xl p-6 shadow-lg text-white" style="background:linear-gradient(135deg,#c8102e,#8f0923)"><p class="text-sm">کل محصولات</p><strong class="text-3xl">{{ total_products }}</strong></div>
+  <div class="rounded-2xl p-6 shadow-lg text-white" style="background:linear-gradient(135deg,#16161b,#35343b)"><p class="text-sm">کل سفارش‌ها</p><strong class="text-3xl">{{ total_orders }}</strong></div>
+  {% if can_users %}<div class="rounded-2xl p-6 shadow-lg text-white" style="background:linear-gradient(135deg,#c8102e,#ec5365)"><p class="text-sm">کل کاربران</p><strong class="text-3xl">{{ total_users }}</strong></div>{% endif %}
+  <div class="rounded-2xl p-6 shadow-lg text-white" style="background:linear-gradient(135deg,#28282f,#51515c)"><p class="text-sm">سفارش‌های جدید</p><strong class="text-3xl">{{ pending_orders }}</strong></div>
+</div>
+<div class="dashboard-navgrid">
+  {% if can_products %}<a class="dashboard-navtile" href="{% url 'owner:products' %}"><i class="fas fa-box"></i><b>مدیریت محصولات</b><span>افزودن و ویرایش محصولات</span></a>{% endif %}
+  {% if can_orders %}<a class="dashboard-navtile" href="{% url 'owner:orders' %}"><i class="fas fa-shopping-bag"></i><b>مدیریت سفارشات</b><span>مشاهده و تغییر وضعیت</span></a>{% endif %}
+  {% if can_reviews %}<a class="dashboard-navtile" href="{% url 'owner:reviews' %}"><i class="fas fa-comments"></i><b>مدیریت نظرات</b><span>تأیید، رد و حذف نظرات</span></a>{% endif %}
+  {% if can_users %}<a class="dashboard-navtile" href="{% url 'owner:users' %}"><i class="fas fa-users-cog"></i><b>مدیریت کاربران</b><span>مشاهده کاربران ثبت‌شده</span></a>{% endif %}
+  {% if is_owner %}<a class="dashboard-navtile" href="{% url 'owner:team' %}"><i class="fas fa-user-shield"></i><b>مدیریت ادمین‌ها</b><span>افزودن و حذف مدیر</span></a>
+  <a class="dashboard-navtile" href="{% url 'owner:team' %}"><i class="fas fa-key"></i><b>دسترسی ادمین‌ها</b><span>تنظیم مجوزهای هر عضو</span></a>{% endif %}
+  {% if can_inventory %}<a class="dashboard-navtile" href="{% url 'owner:inventory' %}"><i class="fas fa-warehouse"></i><b>مدیریت انبار</b><span>موجودی و گردش کالا</span></a>{% endif %}
+  {% if can_categories %}<a class="dashboard-navtile" href="{% url 'owner:categories' %}"><i class="fas fa-layer-group"></i><b>دسته‌بندی‌ها</b><span>تنظیم دسته‌های کالا</span></a>{% endif %}
+  {% if can_appearance %}<a class="dashboard-navtile" href="{% url 'owner:appearance' %}"><i class="fas fa-palette"></i><b>مدیریت ظاهر</b><span>لوگو، رنگ، اسلایدر و فوتر</span></a>{% endif %}
+  {% if can_analytics %}<a class="dashboard-navtile" href="{% url 'owner:analytics' %}"><i class="fas fa-chart-line"></i><b>آمار و گزارش‌ها</b><span>تحلیل سفارش‌ها و محصولات</span></a>{% endif %}
+  {% if is_owner %}<a class="dashboard-navtile" href="{% url 'owner:numbers' %}"><i class="fas fa-calculator"></i><b>فرمت اعداد</b><span>تنظیم نمایش اعداد</span></a>{% endif %}
+</div>
+{% endblock %}

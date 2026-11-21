@@ -1,0 +1,7 @@
+{% extends 'owner/base.html' %}
+{% block owner_content %}<div class="owner-header"><div><span class="section-kicker">EDIT / KTK</span><h1>{{ heading }}</h1></div></div><form method="post" enctype="multipart/form-data" class="panel form-panel owner-form">{% csrf_token %}{{ form.as_div }}{% if gallery_mode %}<fieldset class="kt-owner-gallery">
+<legend>گالری تصاویر محصول (حداکثر ۱۲ عکس)</legend>
+<p>عکس‌های جدید را هم‌زمان انتخاب کنید. تصاویر و اطلاعات هر زبان را نیز در فرم بالا وارد کنید.</p>
+<input type="file" name="gallery_images" accept="image/png,image/jpeg,image/webp" multiple>
+{% if product_gallery %}<div class="kt-owner-gallery-list">{% for photo in product_gallery %}<label><img src="{{ photo.image.url }}" alt="تصویر محصول" width="90" height="80"><span><input type="checkbox" name="delete_gallery" value="{{ photo.pk }}"> حذف تصویر</span></label>{% endfor %}</div>{% endif %}
+</fieldset>{% endif %}<div class="actions-row"><button type="submit" class="btn btn-primary">ذخیره تغییرات</button><a href="{% url back %}" class="btn btn-outline">انصراف</a></div></form>{% endblock %}

@@ -1,0 +1,48 @@
+# Persian translations for KTK KATIKA.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the KTK KTK project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KTK KTK 4.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-18 22:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fa\n"
+"Language-Team: fa <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "Breadcrumb"
+msgstr "مسیر صفحه"
+
+msgid "Brand"
+msgstr "برند"
+
+msgid "SKU"
+msgstr "کد محصول"
+
+msgid "Material"
+msgstr "جنس"
+
+msgid "Dimensions"
+msgstr "ابعاد"
+
+msgid "Packaging"
+msgstr "بسته‌بندی"
+
+msgid "Application"
+msgstr "کاربرد"
+
+msgid "Select language"
+msgstr "انتخاب زبان"
+
+msgid "Apply"
+msgstr "اعمال"
+

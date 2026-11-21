@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static ktk_numbers i18n %}
+{% block title %}{% trans 'مقایسه محصولات' %} | KTK{% endblock %}
+{% block body_class %}kt-product-detail-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-product-detail.css' %}">{% endblock %}
+{% block content %}<main class="kt-product-detail"><h1>{% trans 'مقایسه محصولات' %}</h1>
+{% if products %}<div class="kt-compare-table-wrap"><table class="kt-compare-table"><thead><tr><th>{% trans 'ویژگی' %}</th>{% for product in products %}<th><a href="{% url 'product_detail' product.slug %}">{{ product.display_name }}</a></th>{% endfor %}</tr></thead><tbody>
+<tr><th>{% trans 'قیمت' %}</th>{% for p in products %}<td>{{ p.price|ktk_number:store }} {% trans 'تومان' %}</td>{% endfor %}</tr>
+<tr><th>{% trans 'موجودی' %}</th>{% for p in products %}<td>{{ p.stock }}</td>{% endfor %}</tr>
+<tr><th>{% trans 'جنس' %}</th>{% for p in products %}<td>{{ p.display_material|default:'—' }}</td>{% endfor %}</tr>
+<tr><th>{% trans 'ابعاد' %}</th>{% for p in products %}<td>{{ p.display_dimensions|default:'—' }}</td>{% endfor %}</tr>
+<tr><th>{% trans 'کاربرد' %}</th>{% for p in products %}<td>{{ p.display_usage|default:'—' }}</td>{% endfor %}</tr>
+<tr><th>{% trans 'حذف از مقایسه' %}</th>{% for p in products %}<td><form method="post" action="{% url 'compare_toggle' p.pk %}">{% csrf_token %}<input type="hidden" name="next" value="{% url 'compare_page' %}"><button class="kt-detail-outline" type="submit">✕ {% trans 'حذف' %}</button></form></td>{% endfor %}</tr>
+</tbody></table></div>
+{% if products|length == 1 %}<p class="kt-detail-muted">{% trans 'برای مقایسه، محصول دیگری انتخاب کنید.' %}</p>{% endif %}
+{% else %}<p class="kt-detail-muted">{% trans 'هنوز محصولی برای مقایسه انتخاب نشده است.' %}</p>{% endif %}
+<a class="kt-detail-outline" href="{% url 'catalog' %}">{% trans 'بازگشت به محصولات' %}</a></main>{% endblock %}

@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load i18n static ktk_numbers %}
+{% block title %}{% trans "محصولات کاتیکا | خرید جلد چسبی و لوازم تحریر" %}{% endblock %}
+{% block body_class %}kt-catalog-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-catalog.css' %}">{% endblock %}
+{% block content %}
+<main class="kt-catalog-page" id="catalog-top">
+  <section class="kt-catalog-hero" aria-label="{% trans "معرفی مجموعه محصولات کاتیکا" %}">
+    <div class="kt-catalog-hero-visual" aria-hidden="true">
+      <img class="kt-catalog-visual-light" src="{% static 'images/katika-catalog-banner-light.webp' %}" alt="" width="855" height="212">
+      <img class="kt-catalog-visual-dark" src="{% static 'images/katika-catalog-banner-dark.webp' %}" alt="" width="855" height="212">
+    </div>
+    <div class="kt-catalog-hero-design" aria-hidden="true"></div>
+    <div class="kt-site-width kt-catalog-hero-layout">
+      <div class="kt-catalog-hero-copy">
+        <span class="kt-catalog-kicker">KTK PRODUCTS</span>
+        <h1>{% trans "محصولات" %} <em>{% trans "کاتیکا" %}</em></h1>
+        <p>{% trans "مجموعه کامل پوشش‌های چسبی، محصولات عمده و لوازم تحریر" %}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="kt-site-width kt-catalog-layout">
+    <aside class="kt-catalog-sidebar" id="catalog-filters" aria-label="{% trans "فیلتر محصولات" %}">
+      <form action="{% url 'catalog' %}" method="get" class="kt-catalog-filter-form" id="kt-catalog-filter-form">
+        <div class="kt-catalog-filter-heading"><strong>{% trans "فیلتر محصولات" %}</strong><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#filter"></use></svg></div>
+        {% if query %}<input type="hidden" name="q" value="{{ query }}">{% endif %}
+        <input type="hidden" name="sort" value="{{ sort }}">
+        <input type="hidden" name="per_page" value="{{ per_page }}">
+        <fieldset class="kt-catalog-filter-group">
+          <legend>{% trans "دسته‌بندی" %}</legend>
+          {% for cat in categories %}
+            <label class="kt-filter-check">
+              <input type="checkbox" name="category" value="{{ cat.slug }}" {% if cat.slug in selected_categories %}checked{% endif %}>
+              <span>{{ cat.display_name }}</span><small>({{ cat.product_count }})</small>
+            </label>
+          {% empty %}<p class="kt-filter-hint">{% trans "دسته‌بندی از پنل مالک اضافه می‌شود." %}</p>{% endfor %}
+        </fieldset>
+        <fieldset class="kt-catalog-filter-group">
+          <legend>{% trans "ابعاد" %}</legend>
+          {% for size in size_options %}
+          <label class="kt-filter-check"><input type="checkbox" name="size" value="{{ size.value }}" {% if size.value in selected_sizes %}checked{% endif %}><span>{{ size.label }}</span><small>({{ size.count }})</small></label>
+          {% endfor %}
+        </fieldset>
+        <fieldset class="kt-catalog-filter-group kt-catalog-price-group" data-kt-price-range>
+          <legend>{% trans "محدوده قیمت" %}</legend>
+          <div class="kt-price-slider" data-kt-price-sliders data-min="{{ price_floor }}" data-max="{{ price_ceiling }}">
+            <div class="kt-price-slider-track"></div>
+            <input type="range" min="{{ price_floor }}" max="{{ price_ceiling }}" step="1" value="{{ price_min }}" data-min-range aria-label="{% trans "حداقل قیمت" %}" {% if not price_ceiling %}disabled{% endif %}>
+            <input type="range" min="{{ price_floor }}" max="{{ price_ceiling }}" step="1" value="{{ price_max }}" data-max-range aria-label="{% trans "حداکثر قیمت" %}" {% if not price_ceiling %}disabled{% endif %}>
+          </div>
+          <div class="kt-price-inputs">
+            <label><span>{% trans "از" %}</span><input type="number" name="price_min" min="0" value="{{ price_min }}" inputmode="numeric" aria-label="{% trans "قیمت از" %}" data-price-min><small>{% trans "تومان" %}</small></label>
+            <span>{% trans "تا" %}</span>
+            <label><span>{% trans "تا" %}</span><input type="number" name="price_max" min="0" value="{{ price_max }}" inputmode="numeric" aria-label="{% trans "قیمت تا" %}" data-price-max><small>{% trans "تومان" %}</small></label>
+          </div>
+        </fieldset>
+        <button type="submit" class="kt-filter-submit">{% trans "اعمال فیلتر" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#filter"></use></svg></button>
+        <a class="kt-filter-clear" href="{% url 'catalog' %}">{% trans "پاک کردن فیلترها" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#refresh"></use></svg></a>
+      </form>
+    </aside>
+
+    <div class="kt-catalog-main">
+      <div class="kt-catalog-tiles" aria-label="{% trans "دسته‌بندی‌های منتخب" %}">
+        {% for category in categories|slice:':3' %}
+          <a class="kt-catalog-tile kt-catalog-tile-{{ forloop.counter }} {% if category.slug in selected_categories %}is-selected{% endif %}" href="{% url 'catalog' %}?category={{ category.slug|urlencode }}">
+            <div class="kt-catalog-tile-img" aria-hidden="true">
+              {% if category.image %}<img src="{{ category.image.url }}" alt="" loading="lazy">
+              {% elif category.slug == 'bulk-rolls' %}<img src="{% static 'images/cat-rolls.webp' %}" alt="" loading="lazy">
+              {% elif category.slug == 'stationery' %}<img src="{% static 'images/cat-stationery.webp' %}" alt="" loading="lazy">
+              {% else %}<img src="{% static 'images/cat-covers.webp' %}" alt="" loading="lazy">{% endif %}
+            </div>
+            <div class="kt-catalog-tile-copy"><h2>{{ category.display_name }}</h2><span class="kt-catalog-tile-arrow" aria-hidden="true"><svg><use href="{% static 'icons/katika-icons.svg' %}#chevron-left"></use></svg></span></div>
+          </a>
+        {% empty %}
+          <a class="kt-catalog-tile kt-catalog-tile-1" href="{% url 'catalog' %}"><img src="{% static 'images/cat-rolls.webp' %}" alt=""><h2>{% trans "پخش عمده (رول و متراژ)" %}</h2></a>
+          <a class="kt-catalog-tile kt-catalog-tile-2" href="{% url 'catalog' %}"><img src="{% static 'images/cat-covers.webp' %}" alt=""><h2>{% trans "تک‌جلد چسبی" %}</h2></a>
+          <a class="kt-catalog-tile kt-catalog-tile-3" href="{% url 'catalog' %}"><img src="{% static 'images/cat-stationery.webp' %}" alt=""><h2>{% trans "لوازم تحریر" %}</h2></a>
+        {% endfor %}
+      </div>
+
+      <div class="kt-catalog-toolbar">
+        <p class="kt-results-count" role="status">{% trans "نمایش" %} {{ first_index }} {% trans "تا" %} {{ last_index }} {% trans "از" %} {{ total_count }} {% trans "محصول" %}</p>
+        <div class="kt-catalog-controls">
+          <label class="kt-catalog-select">{% trans "نمایش:" %} <select data-catalog-select="per_page" aria-label="{% trans "تعداد محصول در هر صفحه" %}"><option value="12" {% if per_page == 12 %}selected{% endif %}>{% trans "۱۲ کالا" %}</option><option value="24" {% if per_page == 24 %}selected{% endif %}>{% trans "۲۴ کالا" %}</option><option value="36" {% if per_page == 36 %}selected{% endif %}>{% trans "۳۶ کالا" %}</option></select></label>
+          <label class="kt-catalog-select">{% trans "مرتب‌سازی:" %} <select data-catalog-select="sort" aria-label="{% trans "مرتب‌سازی محصولات" %}"><option value="newest" {% if sort == 'newest' %}selected{% endif %}>{% trans "جدیدترین" %}</option><option value="oldest" {% if sort == 'oldest' %}selected{% endif %}>{% trans "قدیمی‌ترین" %}</option><option value="price_asc" {% if sort == 'price_asc' %}selected{% endif %}>{% trans "ارزان‌ترین" %}</option><option value="price_desc" {% if sort == 'price_desc' %}selected{% endif %}>{% trans "گران‌ترین" %}</option><option value="name" {% if sort == 'name' %}selected{% endif %}>{% trans "نام محصول" %}</option></select></label>
+          <div class="kt-catalog-view-controls" role="group" aria-label="{% trans "حالت نمایش محصولات" %}">
+            <button type="button" class="is-active" aria-label="{% trans "نمایش شبکه‌ای" %}" aria-pressed="true" data-catalog-view="grid"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#grid"></use></svg></button>
+            <button type="button" aria-label="{% trans "نمایش لیستی" %}" aria-pressed="false" data-catalog-view="list"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#list"></use></svg></button>
+          </div>
+          <button class="kt-mobile-filter-button" type="button" aria-controls="catalog-filters" aria-expanded="false" data-catalog-filters-toggle>{% trans "فیلترها" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#filter"></use></svg></button>
+        </div>
+      </div>
+
+      {% if query %}<div class="kt-catalog-search-note">{% trans "نتایج جست‌وجو برای «" %}{{ query }}» <a href="{% url 'catalog' %}">{% trans "حذف جست‌وجو" %}</a></div>{% endif %}
+      <section class="kt-catalog-products" data-catalog-products aria-label="{% trans "لیست محصولات" %}">
+        {% for product in page_obj %}
+        <article class="kt-catalog-card">
+          <div class="kt-catalog-product-photo">
+            <a href="{% url 'product_detail' product.slug %}" class="kt-catalog-photo-link" aria-label="جزئیات {{ product.display_name }}">
+              {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.display_name }}" loading="lazy">
+              {% elif product.category and product.category.image %}<img src="{{ product.category.image.url }}" alt="تصویر دسته‌بندی {{ product.category.display_name }}" loading="lazy">
+              {% elif product.category.slug == 'bulk-rolls' %}<img class="kt-catalog-fallback-light" src="{% static 'images/kt-catalog-bulk-light.webp' %}" alt="{% trans "تصویر نمونه رول" %}" loading="lazy"><img class="kt-catalog-fallback-dark" src="{% static 'images/kt-catalog-bulk-dark.webp' %}" alt="" loading="lazy">
+              {% elif product.category.slug == 'stationery' %}<img class="kt-catalog-fallback-light" src="{% static 'images/kt-catalog-stationery-light.webp' %}" alt="{% trans "تصویر نمونه لوازم تحریر" %}" loading="lazy"><img class="kt-catalog-fallback-dark" src="{% static 'images/kt-catalog-stationery-dark.webp' %}" alt="" loading="lazy">
+              {% elif product.category.slug == 'book-covers' %}<img class="kt-catalog-fallback-light" src="{% static 'images/kt-catalog-covers-light.webp' %}" alt="{% trans "تصویر نمونه جلد چسبی" %}" loading="lazy"><img class="kt-catalog-fallback-dark" src="{% static 'images/kt-catalog-covers-dark.webp' %}" alt="" loading="lazy">
+              {% else %}<span class="kt-catalog-image-fallback">KTK</span>{% endif %}
+            </a>
+            {% if product.discount_percent %}<span class="kt-catalog-badge is-discount">{% trans "تخفیف ویژه" %}</span>{% elif product.featured %}<span class="kt-catalog-badge">{% trans "پرفروش" %}</span>{% endif %}
+            {% if request.user.is_authenticated %}
+            <form class="kt-catalog-favorite" method="post" action="{% url 'wishlist_toggle' product.pk %}">
+              {% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}">
+              <button type="submit" aria-label="{% if product.pk in wishlist_ids %}حذف {{ product.display_name }} از علاقه‌مندی‌ها{% else %}افزودن {{ product.display_name }} به علاقه‌مندی‌ها{% endif %}" class="{% if product.pk in wishlist_ids %}is-favorite{% endif %}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#heart"></use></svg></button>
+            </form>
+            {% else %}<a class="kt-catalog-favorite" href="{% url 'login' %}?next={% url 'catalog' %}" aria-label="برای افزودن {{ product.display_name }} به علاقه‌مندی‌ها وارد شوید"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#heart"></use></svg></a>{% endif %}
+          </div>
+          <div class="kt-catalog-card-body">
+            <h3><a href="{% url 'product_detail' product.slug %}">{{ product.display_name }}</a></h3>
+            <p>{% if product.display_description %}{{ product.display_description|striptags|truncatechars:53 }}{% elif product.size %}{% trans "ابعاد" %} {{ product.get_size_display }}{% elif product.category %}{{ product.category.display_name }}{% else %}{% trans "محصول کاتیکا" %}{% endif %}</p>
+            <div class="kt-catalog-price">
+              {% if product.stock %}
+                <div class="kt-catalog-current-price"><strong>{{ product.price|ktk_number:store }}</strong><span>{% trans "تومان" %}</span></div>
+                {% if product.discount_percent %}<div class="kt-catalog-old-price"><del>{{ product.compare_at_price|ktk_number:store }}</del><span class="kt-catalog-discount-percent">{% trans "٪" %}{{ product.discount_percent }}</span></div>{% endif %}
+              {% else %}<strong class="kt-catalog-out-of-stock">{% trans "ناموجود" %}</strong>{% endif %}
+            </div>
+            <form class="kt-catalog-add-form" method="post" action="{% url 'cart_add' product.pk %}">
+              {% csrf_token %}<input type="hidden" name="next" value="{{ request.get_full_path }}">
+              <div class="kt-catalog-stepper" data-quantity-stepper>
+                <button type="button" data-qty-plus aria-label="{% trans "افزایش تعداد" %}" {% if not product.stock %}disabled{% endif %}><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#plus"></use></svg></button>
+                <input type="number" name="quantity" value="1" min="1" max="{% if product.stock > 20 %}20{% else %}{{ product.stock }}{% endif %}" aria-label="تعداد {{ product.display_name }}" {% if not product.stock %}disabled{% endif %}>
+                <button type="button" data-qty-minus aria-label="{% trans "کاهش تعداد" %}" {% if not product.stock %}disabled{% endif %}><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#minus"></use></svg></button>
+              </div>
+              <button class="kt-catalog-cart-button" type="submit" aria-label="افزودن {{ product.display_name }} به سبد خرید" {% if not product.stock %}disabled{% endif %}><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#cart"></use></svg></button>
+            </form>
+          </div>
+        </article>
+        {% empty %}
+        <div class="kt-catalog-empty"><h2>{% trans "محصولی پیدا نشد" %}</h2><p>{% if active_filters %}{% trans "فیلترها یا عبارت جست‌وجو را تغییر دهید." %}{% else %}{% trans "هنوز محصولی برای فروش ثبت نشده است. مالک می‌تواند از پنل محصولات را اضافه کند." %}{% endif %}</p><a href="{% url 'catalog' %}">{% trans "نمایش همه محصولات" %}</a></div>
+        {% endfor %}
+      </section>
+
+      {% if page_obj.paginator.num_pages > 1 %}
+      <nav class="kt-catalog-pagination" aria-label="{% trans "صفحه‌بندی محصولات" %}">
+        {% if page_obj.has_previous %}<a href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ page_obj.previous_page_number }}" aria-label="{% trans "صفحه قبل" %}">{% trans "قبلی" %}</a>{% endif %}
+        {% for n in page_obj.paginator.page_range %}
+          {% if n >= page_obj.number|add:'-2' and n <= page_obj.number|add:'2' %}<a href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ n }}" {% if n == page_obj.number %}aria-current="page" class="is-current"{% endif %}>{{ n }}</a>{% endif %}
+        {% endfor %}
+        {% if page_obj.has_next %}<a href="?{% if pagination_query %}{{ pagination_query }}&amp;{% endif %}page={{ page_obj.next_page_number }}" aria-label="{% trans "صفحه بعد" %}">{% trans "بعدی" %}</a>{% endif %}
+      </nav>
+      {% endif %}
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block extra_js %}<script defer src="{% static 'js/katika-catalog.js' %}"></script>{% endblock %}

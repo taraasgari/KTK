@@ -1,0 +1,23 @@
+{
+  "store_type": "perfume",
+  "theme": "luxury_perfume",
+  "product_type": "perfume",
+
+  "categories": [
+    "women",
+    "men",
+    "unisex"
+  ],
+
+  "attributes": [
+    "brand",
+    "volume",
+    "gender",
+    "top_note",
+    "middle_note",
+    "base_note",
+    "season",
+    "longevity",
+    "projection"
+  ]
+}

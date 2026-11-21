@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ ref.news_heading }} | KTK{% endblock %}
+{% block body_class %}kt-ref-news-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-reference-pages.css' %}">{% endblock %}
+{% block content %}
+<main class="kt-ref-news" aria-labelledby="news-title">
+  <section class="kt-news-hero"><div class="kt-site-width"><p class="kt-news-breadcrumb"><a href="{% url 'home' %}">{{ ref.home }}</a> / {{ ref.news_heading }}</p><h1 id="news-title">{{ ref.news_heading }} <i aria-hidden="true"></i></h1><p>{{ ref.news_intro }}</p></div></section>
+  <div class="kt-news-content kt-site-width">
+    <div class="kt-news-top-grid">
+      <article class="kt-featured-news">
+        <img src="{% static 'images/reference-pages/news-featured.webp' %}" alt="KTK" loading="eager">
+        <div class="kt-featured-gradient"></div>
+        <div class="kt-featured-copy"><span class="kt-news-label">{{ ref.news_tag }}</span><h2>{{ ref.featured_title }}</h2><p>{{ ref.featured_excerpt }}</p><span class="kt-news-date">▣ {{ ref.featured_date }}</span><a href="{% url 'news_detail' 'tehran-exhibition' %}" class="kt-ref-button">{{ ref.view_news }} <span>←</span></a></div>
+        <div class="kt-news-dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+      </article>
+      <aside class="kt-news-categories" aria-label="{{ ref.news_categories }}">
+        <h2>{{ ref.news_categories }} <i></i></h2>
+        <a href="{% url 'news_events' %}" class="{% if group == 'all' %}selected{% endif %}">{{ ref.all_news }} <span>▦</span></a>
+        <a href="{% url 'news_events' %}?category=product" class="{% if group == 'product' %}selected{% endif %}">{{ ref.product_news }} <span>⬡</span></a>
+        <a href="{% url 'news_events' %}?category=event" class="{% if group == 'event' %}selected{% endif %}">{{ ref.events }} <span>▣</span></a>
+        <a href="{% url 'news_events' %}?category=company" class="{% if group == 'company' %}selected{% endif %}">{{ ref.company_news }} <span>▥</span></a>
+        <a href="{% url 'news_events' %}?category=social" class="{% if group == 'social' %}selected{% endif %}">{{ ref.social }} <span>♧</span></a>
+      </aside>
+    </div>
+    <div class="kt-news-lower-grid">
+      <div class="kt-news-main">
+        <div class="kt-news-toolbar"><strong>{{ ref.all_news }} <span>{{ total }}</span></strong><form action="{% url 'news_events' %}" method="get"><input type="hidden" name="category" value="{{ group }}"><select name="sort" onchange="this.form.submit()" aria-label="{{ ref.sort_latest }}"><option value="latest" {% if sort != 'oldest' %}selected{% endif %}>{{ ref.sort_latest }}</option><option value="oldest" {% if sort == 'oldest' %}selected{% endif %}>{{ ref.sort_oldest }}</option></select></form></div>
+        <div class="kt-news-cards">
+          {% for item in news %}
+          <article class="kt-news-card"><a href="{% url 'news_detail' item.slug %}" class="kt-news-card-photo"><img src="{% static 'images/reference-pages/' %}{{ item.image }}" alt="" loading="lazy"></a><div class="kt-news-card-body"><span class="kt-news-card-date">▣ {{ item.date }}</span><h3><a href="{% url 'news_detail' item.slug %}">{{ item.title }}</a></h3><p>{{ item.excerpt }}</p><a class="kt-news-readmore" href="{% url 'news_detail' item.slug %}">{{ ref.more }} <span aria-hidden="true">←</span></a></div></article>
+          {% empty %}<div class="kt-news-empty">{{ ref.no_news }}</div>{% endfor %}
+        </div>
+      </div>
+      <aside class="kt-news-newsletter"><div class="kt-news-envelope">✉</div><h2>{{ ref.newsletter_title }}</h2><p>{{ ref.newsletter_desc }}</p><div class="kt-news-email-example"><span>{{ ref.email }}</span><span>✉</span></div><span class="kt-ref-button kt-news-faux-button">{{ ref.newsletter_button }} <span>➤</span></span></aside>
+    </div>
+  </div>
+</main>
+{% endblock %}

@@ -1,0 +1,26 @@
+[build-system]
+requires = [
+    "setuptools>=68",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "shop-core"
+version = "0.1.0"
+description = "Reusable multi-store ecommerce core for Django"
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "Django>=5.0"
+]
+
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,7 @@
+{% extends 'owner/base.html' %}
+{% block title %}✏️ ویرایش پروفایل | KTK{% endblock %}
+{% block owner_content %}
+<div class="owner-header"><div><span class="section-kicker">OWNER PROFILE</span><h1>✏️ ویرایش پروفایل</h1><p>اطلاعات شخصی و امنیت حساب</p></div><a href="{% url 'owner:home' %}" class="btn btn-outline">بازگشت</a></div>
+<div class="dashboard-grid"><section class="panel"><h2>👤 مشخصات و تصویر پروفایل</h2>{% if owner_details.image %}<img src="{{ owner_details.image.url }}" style="width:90px;height:90px;object-fit:cover;border-radius:50%;margin-bottom:15px" alt="عکس پروفایل">{% endif %}<form method="post" enctype="multipart/form-data" class="form-panel">{% csrf_token %}<input type="hidden" name="action" value="account">{{ account_form.as_div }}{{ details_form.as_div }}<button type="submit" class="btn btn-primary">ذخیره اطلاعات</button></form></section>
+<section class="panel"><h2>🔑 تغییر رمز عبور</h2><form method="post" class="form-panel">{% csrf_token %}<input type="hidden" name="action" value="password">{{ password_form.as_div }}<button type="submit" class="btn btn-primary">تغییر رمز عبور</button></form></section></div>
+{% endblock %}

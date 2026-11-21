@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load i18n ktk_numbers static %}
+{% block title %}{% trans "کاتیکا | KTK — جلد چسبی کتاب و محصولات منتخب" %}{% endblock %}
+{% block content %}
+<main class="kt-home">
+  <section class="kt-hero" aria-label="{% trans "معرفی محصولات کاتیکا" %}" data-katika-slider>
+    {% if slides %}
+      {% for slide in slides %}
+      <div class="kt-hero-panel" data-slide {% if not forloop.first %}hidden{% endif %}>
+        {% if slide.image %}<img class="kt-hero-custom-photo" src="{{ slide.image.url }}" alt="" loading="{% if forloop.first %}eager{% else %}lazy{% endif %}">{% else %}<div class="kt-hero-reference-photo" aria-hidden="true"></div>{% endif %}
+        <div class="kt-hero-darken" aria-hidden="true"></div><div class="kt-hero-red-swoosh" aria-hidden="true"></div>
+        <div class="kt-site-width kt-hero-inner">
+          <div class="kt-hero-copy"><span class="kt-hero-kicker">{% trans "کاتیکا" %}</span>
+            <h1>{{ slide.display_title }}</h1><p>{{ slide.display_subtitle }}</p>
+            <div class="kt-hero-buttons"><a class="kt-btn-red" href="{% if slide.link %}{{ slide.link }}{% else %}{% url 'home' %}#products{% endif %}">{% trans "مشاهده محصولات" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg></a><a href="{% url 'about_katika' %}" class="kt-btn-outline">{% trans "معرفی کاتیکا" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#play"></use></svg></a></div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <div class="kt-hero-panel" data-slide>
+        <div class="kt-hero-reference-photo" aria-hidden="true"></div><div class="kt-hero-darken" aria-hidden="true"></div><div class="kt-hero-red-swoosh" aria-hidden="true"></div>
+        <div class="kt-site-width kt-hero-inner">
+          <div class="kt-hero-copy"><span class="kt-hero-kicker">{% trans "کاتیکا" %}</span>
+            <h1>{% if store.display_hero_title %}{{ store.display_hero_title }}{% else %}{% trans "پوشش حرفه‌ای برای" %}<br>{% trans "کتاب‌ها و دفترهای شما" %}{% endif %}</h1>
+            <p>{% if store.display_hero_subtitle %}{{ store.display_hero_subtitle }}{% else %}{% trans "تولیدکننده انواع پخش عمده و تک‌جلد چسبی" %}<br>{% trans "و لوازم تحریر با کیفیت بالا" %}{% endif %}</p>
+            <div class="kt-hero-buttons"><a href="#products" class="kt-btn-red">{% trans "مشاهده محصولات" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg></a><a href="#about" class="kt-btn-outline">{% trans "معرفی کاتیکا" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#play"></use></svg></a></div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if slides|length > 1 %}
+    <div class="kt-hero-pagination" role="group" aria-label="{% trans "کنترل اسلایدر" %}">
+      {% for slide in slides %}<button type="button" class="kt-hero-dot {% if forloop.first %}active{% endif %}" data-slide-dot="{{ forloop.counter0 }}" aria-label="نمایش اسلاید {{ forloop.counter }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"></button>{% endfor %}
+    </div>
+    {% endif %}
+  </section>
+
+  {% if store.show_benefits %}
+  <section class="kt-benefits kt-site-width" aria-label="{% trans "مزیت‌های خرید از کاتیکا" %}">
+    <div class="kt-benefit"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#award"></use></svg><span><strong>{% trans "کیفیت تضمین‌شده" %}</strong><small>{% trans "مواد اولیه مرغوب" %}</small></span></div>
+    <div class="kt-benefit"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#truck"></use></svg><span><strong>{% trans "ارسال سریع" %}</strong><small>{% trans "به سراسر کشور" %}</small></span></div>
+    <div class="kt-benefit"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#box"></use></svg><span><strong>{% trans "خرید عمده و تکی" %}</strong><small>{% trans "با قیمت رقابتی" %}</small></span></div>
+    <a class="kt-benefit" href="{% url 'support_request' %}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#headset"></use></svg><span><strong>{% trans "مشاوره تخصصی" %}</strong><small>{% trans "انتخاب محصول مناسب" %}</small></span></a>
+  </section>
+  {% endif %}
+
+  <section class="kt-categories kt-site-width" id="categories" aria-label="{% trans "دسته‌بندی محصولات" %}">
+    {% for category in categories|slice:':3' %}
+      <a class="kt-category-card kt-category-{{ forloop.counter }}" href="{% url 'catalog' %}?category={{ category.slug|urlencode }}">
+        <div class="kt-category-photo" aria-hidden="true">{% if category.image %}<img src="{{ category.image.url }}" alt="" loading="lazy">{% endif %}</div><div class="kt-category-copy"><h2>{{ category.display_name }}</h2><span class="kt-category-arrow"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-left"></use></svg></span></div>
+      </a>
+    {% empty %}
+      <a class="kt-category-card kt-category-1" href="#products"><div class="kt-category-photo" aria-hidden="true"></div><div class="kt-category-copy"><h2>{% trans "پخش عمده" %} <small>{% trans "(رول و متراژ)" %}</small></h2><span class="kt-category-arrow"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-left"></use></svg></span></div></a>
+      <a class="kt-category-card kt-category-2" href="#products"><div class="kt-category-photo" aria-hidden="true"></div><div class="kt-category-copy"><h2>{% trans "تک‌جلد" %}<br>{% trans "چسبی" %}</h2><span class="kt-category-arrow"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-left"></use></svg></span></div></a>
+      <a class="kt-category-card kt-category-3" href="#products"><div class="kt-category-photo" aria-hidden="true"></div><div class="kt-category-copy"><h2>{% trans "لوازم" %}<br>{% trans "تحریر" %}</h2><span class="kt-category-arrow"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#chevron-left"></use></svg></span></div></a>
+    {% endfor %}
+  </section>
+
+  <section class="kt-store-products kt-site-width" id="products">
+    <header class="kt-section-heading"><div><small>{% trans "محصولات کاتیکا" %}</small><h2>{% trans "محصولات" %} <span>{% trans "منتخب" %}</span></h2><p>{% trans "از میان محصولات کاتیکا، انتخاب مناسب خودتان را پیدا کنید." %}</p></div><a href="{% url 'catalog' %}" class="kt-see-all">{% trans "مشاهده همه محصولات" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg></a></header>
+    <form method="get" class="kt-filter-bar" action="{% url 'home' %}#products"><label class="kt-filter-input"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#search"></use></svg><input type="search" name="q" value="{{ query }}" placeholder="{% trans "نام محصول یا کد کالا" %}" aria-label="{% trans "جستجوی محصولات" %}"></label><select name="category" aria-label="{% trans "دسته‌بندی" %}"><option value="">{% trans "همه دسته‌بندی‌ها" %}</option>{% for c in categories %}<option value="{{ c.slug }}" {% if selected_category == c.slug %}selected{% endif %}>{{ c.display_name }}</option>{% endfor %}</select><button type="submit" class="kt-btn-red">{% trans "جستجو" %}</button></form>
+    <div class="kt-product-grid">{% for product in products %}
+      <article class="kt-product-card"><a class="kt-product-image" href="{% url 'product_detail' product.slug %}">{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.display_name }}" loading="lazy">{% else %}<span class="kt-product-placeholder">KTK</span>{% endif %}{% if product.featured %}<span class="kt-product-featured">{% trans "پیشنهاد ویژه" %}</span>{% endif %}</a>
+        <div class="kt-product-body"><small>{% if product.category %}{{ product.category.display_name }}{% else %}{% trans "محصول کاتیکا" %}{% endif %}</small><h3><a href="{% url 'product_detail' product.slug %}">{{ product.display_name }}</a></h3><div class="kt-product-bottom"><span>{% if product.stock %}<strong>{{ product.price|ktk_number:store }}</strong><small>{% trans "تومان" %}</small>{% else %}<strong class="kt-unavailable">{% trans "ناموجود" %}</strong>{% endif %}</span><a class="kt-product-arrow" href="{% url 'product_detail' product.slug %}" aria-label="مشاهده {{ product.display_name }}"><svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg></a></div></div>
+      </article>
+    {% empty %}<div class="kt-no-products"><h3>{% trans "محصولی برای نمایش وجود ندارد" %}</h3><p>{% trans "محصولات از پنل مالک اضافه می‌شوند. اگر جست‌وجو کرده‌اید، عبارت دیگری را امتحان کنید." %}</p><a href="{% url 'home' %}" class="kt-btn-red">{% trans "بازگشت به فروشگاه" %}</a></div>{% endfor %}</div>
+  </section>
+  {% if store.show_about %}<section class="kt-about" id="about"><div class="kt-site-width kt-about-inner"><div><small>{% trans "درباره کاتیکا" %}</small><h2>{% trans "محافظت بهتر،" %}<br><span>{% trans "انتخاب حرفه‌ای‌تر." %}</span></h2></div><div><p>{% if store.display_description %}{{ store.display_description }}{% else %}{% trans "کاتیکا با تمرکز بر محصولات پوشش و جلد چسبی کتاب، تجربه‌ای ساده و قابل اعتماد برای تهیه محصولات موردنیاز شما فراهم می‌کند." %}{% endif %}</p><a href="{% url 'support_request' %}" class="kt-btn-red">{% trans "ارتباط و مشاوره" %} <svg aria-hidden="true"><use href="{% static 'icons/katika-icons.svg' %}#arrow-left"></use></svg></a></div></div></section>{% endif %}
+</main>
+{% endblock %}
+{% block extra_js %}<script defer src="{% static 'js/katika-storefront.js' %}"></script>{% endblock %}

@@ -1,0 +1,1029 @@
+# Chinese (Simplified) translations for KTK KATIKA.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the KTK KTK project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: KTK KTK 4.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-11-18 22:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_Hans\n"
+"Language-Team: zh_Hans <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+msgid "(رول و متراژ)"
+msgstr "卷材与定尺"
+
+msgid "KTK — کاتیکا"
+msgstr "卡蒂卡 KTK"
+
+msgid "© KTK — فروشگاه کاتیکا"
+msgstr "© KTK — 官方商城"
+
+msgid "· قیمت واحد:"
+msgstr "· 单价："
+
+msgid "آدرس"
+msgstr "地址"
+
+msgid "ابعاد"
+msgstr "尺寸"
+
+msgid "ادامه و ثبت سفارش ←"
+msgstr "继续结算 →"
+
+msgid "ارتباط با کاتیکا"
+msgstr "联系卡蒂卡"
+
+msgid "ارتباط و مشاوره"
+msgstr "联系与咨询"
+
+msgid "ارزان‌ترین"
+msgstr "价格从低到高"
+
+msgid "ارسال تصویر فیش"
+msgstr "上传转账凭证"
+
+msgid "ارسال درخواست"
+msgstr "提交申请"
+
+msgid "ارسال سریع"
+msgstr "快速配送"
+
+msgid "ارسال سریع به سراسر کشور"
+msgstr "全国快速配送"
+
+msgid "ارسال پیام"
+msgstr "发送消息"
+
+msgid "از"
+msgstr "从"
+
+msgid "از میان محصولات کاتیکا، انتخاب مناسب خودتان را پیدا کنید."
+msgstr "从卡蒂卡产品中找到适合您的选择。"
+
+msgid "از همکاری با افراد و مجموعه‌های حرفه‌ای و متعهد در زمینه تأمین، توزیع و توسعه بازار محصولات کاتیکا استقبال می‌کنیم."
+msgstr "欢迎专业、可靠的分销商、供应商及企业与我们合作，共同开拓市场。"
+
+msgid "اطلاعات تحویل"
+msgstr "配送信息"
+
+msgid "اطلاعات خود را تکمیل کنید تا در کوتاه‌ترین زمان با شما تماس بگیریم."
+msgstr "请填写您的资料，我们会尽快与您联系。"
+
+msgid "اطلاعات کارت به کارت"
+msgstr "银行转账信息"
+
+msgid "اعمال فیلتر"
+msgstr "应用筛选"
+
+msgid "افزایش تعداد"
+msgstr "增加数量"
+
+msgid "افزودن محصول دیگر"
+msgstr "继续添加商品"
+
+msgid "انتخاب حرفه‌ای‌تر."
+msgstr "更专业的选择。"
+
+msgid "انتخاب محصول مناسب"
+msgstr "挑选合适产品"
+
+msgid "ایجاد روابط پایدار و مبتنی بر اعتماد"
+msgstr "建立长期互信的合作关系"
+
+msgid "ایمیل"
+msgstr "电子邮件"
+
+msgid "ایمیل هنوز ثبت نشده است."
+msgstr "暂无电子邮箱。"
+
+msgid "این درخواست نیاز به بررسی مالک دارد و به‌صورت خودکار بازپرداخت یا لغو انجام نمی‌دهد."
+msgstr "此申请需要店主审核，不会自动取消订单或退款。"
+
+msgid "اینستاگرام"
+msgstr "Instagram"
+
+msgid "با ساخت حساب، دسترسی به بخش مشتریان برای شما فعال می‌شود."
+msgstr "创建账户后即可使用客户中心。"
+
+msgid "با قیمت رقابتی"
+msgstr "价格具有竞争力"
+
+msgid "باز کردن منوی سایت"
+msgstr "打开导航菜单"
+
+msgid "بازگشت به فروشگاه"
+msgstr "返回商城"
+
+msgid "برای دریافت اطلاعات، مشاوره محصول و ثبت درخواست با ما در ارتباط باشید."
+msgstr "如需产品信息、选购建议或提交需求，请联系我们。"
+
+msgid "برای دسترسی به حساب خود وارد شوید. مدیران از همین صفحه به پنل مالک هدایت می‌شوند."
+msgstr "登录您的账户，店铺管理员也可由此进入管理后台。"
+
+msgid "برای شروع، محصولی از فروشگاه انتخاب کنید."
+msgstr "请选择商品开始购物。"
+
+msgid "برای همکاری در توزیع، فروش عمده یا نمایندگی، درخواست خود را ثبت کنید."
+msgstr "申请成为分销商、批发合作伙伴或代理商。"
+
+msgid "برای پیگیری سفارش با فروشگاه تماس بگیرید و کد زیر را اعلام کنید."
+msgstr "如需查询订单，请联系店铺并提供以下订单编号。"
+
+msgid "بعدی"
+msgstr "下一页"
+
+msgid "به سراسر کشور"
+msgstr "全国范围"
+
+msgid "تا"
+msgstr "至"
+
+msgid "تحریر"
+msgstr "文具"
+
+msgid "تخفیف ویژه"
+msgstr "特惠"
+
+msgid "تصویر فیش (حداکثر ۵ مگابایت)"
+msgstr "转账凭证图片（最大5MB）"
+
+msgid "تصویر نمونه جلد چسبی"
+msgstr "书皮示例图片"
+
+msgid "تصویر نمونه رول"
+msgstr "卷材示例图片"
+
+msgid "تصویر نمونه لوازم تحریر"
+msgstr "文具示例图片"
+
+msgid "تعداد محصول در هر صفحه"
+msgstr "每页商品数"
+
+msgid "تعداد:"
+msgstr "数量："
+
+msgid "تغییر حالت روز و شب"
+msgstr "切换日间／夜间模式"
+
+msgid "تلفن تماس"
+msgstr "联系电话"
+
+msgid "تماس با"
+msgstr "联系"
+
+msgid "تماس با ما"
+msgstr "联系我们"
+
+msgid "تماس با ما | کاتیکا"
+msgstr "联系我们 | KTK"
+
+msgid "تماس با پشتیبانی"
+msgstr "联系客服"
+
+msgid "تماس با کاتیکا"
+msgstr "联系卡蒂卡"
+
+msgid "توجه: این فرایند فقط سفارش را ثبت می‌کند و پرداخت آنلاین انجام نمی‌شود."
+msgstr "注意：此操作仅提交订单，不会进行在线支付。"
+
+msgid "توسعه بازار و افزایش فرصت‌های فروش"
+msgstr "拓展市场和销售机会"
+
+msgid "توضیحات تکمیلی"
+msgstr "补充说明"
+
+msgid "تولیدکننده انواع پخش عمده و تک‌جلد چسبی"
+msgstr "零售及批发自粘书皮制造商"
+
+msgid "تومان"
+msgstr "土曼"
+
+msgid "تکمیل اطلاعات سفارش"
+msgstr "结算信息"
+
+msgid "تک‌جلد"
+msgstr "书皮"
+
+msgid "تک‌جلد چسبی"
+msgstr "自粘书皮"
+
+msgid "ثبت درخواست"
+msgstr "提交申请"
+
+msgid "ثبت سفارش | KTK"
+msgstr "结算 | KTK"
+
+msgid "ثبت سفارش به معنای تأیید دریافت وجه نیست."
+msgstr "订单提交不代表付款已确认。"
+
+msgid "ثبت نهایی سفارش ←"
+msgstr "提交订单 →"
+
+msgid "ثبت‌نام"
+msgstr "注册"
+
+msgid "ثبت‌نام | کاتیکا"
+msgstr "注册 | KTK"
+
+msgid "ثبت‌نام و ورود"
+msgstr "注册并登录"
+
+msgid "ثبت‌نام کنید"
+msgstr "创建账户"
+
+msgid "جدیدترین"
+msgstr "最新"
+
+msgid "جستجو"
+msgstr "搜索"
+
+msgid "جستجوی محصولات"
+msgstr "搜索商品"
+
+msgid "جستجوی محصولات، کد کالا و ..."
+msgstr "搜索商品名称、货号…"
+
+msgid "جمع کل"
+msgstr "总计"
+
+msgid "حالت نمایش محصولات"
+msgstr "商品布局"
+
+msgid "حداقل قیمت"
+msgstr "最低价格"
+
+msgid "حداکثر قیمت"
+msgstr "最高价格"
+
+msgid "حذف"
+msgstr "移除"
+
+msgid "حذف جست‌وجو"
+msgstr "清除搜索"
+
+msgid "حساب دارید؟"
+msgstr "已有账户？"
+
+msgid "حساب من"
+msgstr "我的账户"
+
+msgid "حساب من | کاتیکا"
+msgstr "我的账户 | KTK"
+
+msgid "حساب ندارید؟"
+msgstr "还没有账户？"
+
+msgid "خانه"
+msgstr "首页"
+
+msgid "خروج از حساب"
+msgstr "退出登录"
+
+msgid "خرید عمده و تکی"
+msgstr "批发与零售"
+
+msgid "خلاصه سبد خرید"
+msgstr "订单摘要"
+
+msgid "خوش آمدید،"
+msgstr "欢迎，"
+
+msgid "درباره کاتیکا"
+msgstr "关于卡蒂卡"
+
+msgid "درخواست لغو یا مرجوعی"
+msgstr "取消或退货申请"
+
+msgid "درخواست لغو یا مرجوعی سفارش"
+msgstr "申请取消订单或退货"
+
+msgid "درخواست همکاری"
+msgstr "合作申请"
+
+msgid "دسترسی سریع"
+msgstr "快捷链接"
+
+msgid "دسته‌بندی"
+msgstr "分类"
+
+msgid "دسته‌بندی از پنل مالک اضافه می‌شود."
+msgstr "商品分类由店主后台管理。"
+
+msgid "دسته‌بندی محصولات"
+msgstr "商品分类"
+
+msgid "دسته‌بندی‌ها"
+msgstr "分类"
+
+msgid "دسته‌بندی‌های منتخب"
+msgstr "精选分类"
+
+msgid "رشد مشترک"
+msgstr "共同成长"
+
+msgid "روش تسویه: هنگام تحویل. درگاه آنلاین فعال نیست."
+msgstr "付款方式：货到付款。在线支付尚未开启。"
+
+msgid "ساخت حساب کاربری"
+msgstr "创建账户"
+
+msgid "سبد خرید"
+msgstr "购物车"
+
+msgid "سبد خرید | KTK"
+msgstr "购物车 | KTK"
+
+msgid "سبد خرید خالی است"
+msgstr "购物车为空"
+
+msgid "سفارش ثبت شد | KTK"
+msgstr "下单成功 | KTK"
+
+msgid "سفارش شما ثبت شد"
+msgstr "订单已提交"
+
+msgid "سفارش‌ها در نسخه فعلی به شماره تماس هنگام ثبت سفارش وابسته هستند؛ تاریخچه سفارش‌ها هنوز به حساب کاربری متصل نشده است."
+msgstr "目前订单与结算时填写的手机号码关联，账户订单历史功能尚未开放。"
+
+msgid "شماره تماس"
+msgstr "电话号码"
+
+msgid "شماره تماس هنوز ثبت نشده است."
+msgstr "暂无联系电话。"
+
+msgid "شماره سفارش:"
+msgstr "订单号："
+
+msgid "صفحه اصلی کاتیکا"
+msgstr "卡蒂卡首页"
+
+msgid "صفحه بعد"
+msgstr "下一页"
+
+msgid "صفحه قبل"
+msgstr "上一页"
+
+msgid "صفحه‌بندی محصولات"
+msgstr "商品分页"
+
+msgid "ضمانت اصالت کالا"
+msgstr "正品保障"
+
+msgid "فارسی"
+msgstr "波斯语"
+
+msgid "فعال کردن حالت شب"
+msgstr "开启夜间模式"
+
+msgid "فیش"
+msgstr "凭证"
+
+msgid "فیش کارت به کارت"
+msgstr "转账凭证"
+
+msgid "فیشی ثبت نشده است."
+msgstr "尚未上传转账凭证。"
+
+msgid "فیلتر محصولات"
+msgstr "筛选商品"
+
+msgid "فیلترها"
+msgstr "筛选"
+
+msgid "فیلترها یا عبارت جست‌وجو را تغییر دهید."
+msgstr "请调整筛选条件或搜索关键词。"
+
+msgid "قبلی"
+msgstr "上一页"
+
+msgid "قدیمی‌ترین"
+msgstr "最早"
+
+msgid "قیمت از"
+msgstr "最低价"
+
+msgid "قیمت تا"
+msgstr "最高价"
+
+msgid "لوازم"
+msgstr "用品"
+
+msgid "لوازم تحریر"
+msgstr "文具"
+
+msgid "لیست محصولات"
+msgstr "商品列表"
+
+msgid "مبلغ:"
+msgstr "金额："
+
+msgid "متن پیام"
+msgstr "消息内容"
+
+msgid "مجموع سفارش"
+msgstr "订单总额"
+
+msgid "مجموعه کامل پوشش‌های چسبی، محصولات عمده و لوازم تحریر"
+msgstr "自粘书皮、批发卷材和文具用品一站购齐"
+
+msgid "محافظت بهتر،"
+msgstr "更好的保护，"
+
+msgid "محدوده قیمت"
+msgstr "价格区间"
+
+msgid "محصول"
+msgstr "商品"
+
+msgid "محصول کاتیکا"
+msgstr "卡蒂卡产品"
+
+msgid "محصولات"
+msgstr "商品"
+
+msgid "محصولات از پنل مالک اضافه می‌شوند. اگر جست‌وجو کرده‌اید، عبارت دیگری را امتحان کنید."
+msgstr "商品由店主后台添加，请尝试其他关键词。"
+
+msgid "محصولات کاتیکا"
+msgstr "卡蒂卡产品"
+
+msgid "محصولات کاتیکا | خرید جلد چسبی و لوازم تحریر"
+msgstr "卡蒂卡产品 | 自粘书皮及文具"
+
+msgid "محصولی برای نمایش وجود ندارد"
+msgstr "暂无商品"
+
+msgid "محصولی پیدا نشد"
+msgstr "未找到商品"
+
+msgid "مرتب‌سازی محصولات"
+msgstr "商品排序"
+
+msgid "مرتب‌سازی:"
+msgstr "排序："
+
+msgid "مزیت‌های خرید از کاتیکا"
+msgstr "选择卡蒂卡的理由"
+
+msgid "مشاهده محصولات"
+msgstr "浏览商品"
+
+msgid "مشاهده همه محصولات"
+msgstr "查看全部商品"
+
+msgid "مشاوره تخصصی"
+msgstr "专业咨询"
+
+msgid "معرفی مجموعه محصولات کاتیکا"
+msgstr "卡蒂卡商品系列介绍"
+
+msgid "معرفی محصولات کاتیکا"
+msgstr "卡蒂卡产品介绍"
+
+msgid "معرفی کاتیکا"
+msgstr "了解卡蒂卡"
+
+msgid "منتخب"
+msgstr "精选"
+
+msgid "منوی اصلی"
+msgstr "主导航"
+
+msgid "منوی موبایل"
+msgstr "移动导航"
+
+msgid "مواد اولیه مرغوب"
+msgstr "优质原材料"
+
+msgid "موضوع و توضیحات خود را ثبت کنید. پاسخ از طریق راه ارتباطی اعلام‌شده پیگیری می‌شود."
+msgstr "请描述您的需求，我们会通过您提供的联系方式回复。"
+
+msgid "موضوع پیام"
+msgstr "消息主题"
+
+msgid "نام مجموعه"
+msgstr "公司名称"
+
+msgid "نام محصول"
+msgstr "商品名称"
+
+msgid "نام محصول یا کد کالا"
+msgstr "商品名称或货号"
+
+msgid "نام و نام خانوادگی"
+msgstr "姓名"
+
+msgid "نام کاربری یا رمز عبور نادرست است."
+msgstr "用户名或密码不正确。"
+
+msgid "ناموجود"
+msgstr "缺货"
+
+msgid "نتایج جست‌وجو برای «"
+msgstr "“的搜索结果"
+
+msgid "نشانی دفتر به‌زودی درج می‌شود."
+msgstr "地址即将公布。"
+
+msgid "نمایش"
+msgstr "显示"
+
+msgid "نمایش شبکه‌ای"
+msgstr "网格视图"
+
+msgid "نمایش لیستی"
+msgstr "列表视图"
+
+msgid "نمایش همه محصولات"
+msgstr "查看所有商品"
+
+msgid "نمایش:"
+msgstr "显示："
+
+msgid "نوع همکاری"
+msgstr "合作类型"
+
+msgid "همراهی در تمام مراحل همکاری"
+msgstr "全程提供合作支持"
+
+msgid "همه دسته‌بندی‌ها"
+msgstr "全部分类"
+
+msgid "همه محصولات"
+msgstr "全部商品"
+
+msgid "همکاری با"
+msgstr "与…合作"
+
+msgid "همکاری با ما"
+msgstr "商务合作"
+
+msgid "همکاری با ما | کاتیکا"
+msgstr "商务合作 | KTK"
+
+msgid "همکاری بلندمدت"
+msgstr "长期合作"
+
+msgid "هنوز محصولی برای فروش ثبت نشده است. مالک می‌تواند از پنل محصولات را اضافه کند."
+msgstr "暂无上架商品，店主可在后台添加。"
+
+msgid "و لوازم تحریر با کیفیت بالا"
+msgstr "及优质文具用品"
+
+msgid "وارد شوید"
+msgstr "登录"
+
+msgid "وب‌سایت"
+msgstr "网站"
+
+msgid "ورود / ثبت‌نام"
+msgstr "登录／注册"
+
+msgid "ورود به حساب"
+msgstr "登录"
+
+msgid "ورود به حساب | کاتیکا"
+msgstr "登录 | KTK"
+
+msgid "ورود به حساب کاتیکا"
+msgstr "登录卡蒂卡"
+
+msgid "٪"
+msgstr "%"
+
+msgid "پاک کردن فیلترها"
+msgstr "清除筛选"
+
+msgid "پخش عمده"
+msgstr "批发"
+
+msgid "پخش عمده (رول و متراژ)"
+msgstr "批发卷材及定尺"
+
+msgid "پرفروش"
+msgstr "热销"
+
+msgid "پشتیبانی | KTK"
+msgstr "客服 | KTK"
+
+msgid "پشتیبانی حرفه‌ای"
+msgstr "专业支持"
+
+msgid "پشتیبانی سفارش‌ها"
+msgstr "订单客服"
+
+msgid "پشتیبانی و مشاوره"
+msgstr "客服与咨询"
+
+msgid "پنل مدیریت"
+msgstr "管理后台"
+
+msgid "پوشش حرفه‌ای برای"
+msgstr "专业保护"
+
+msgid "پیشنهاد ویژه"
+msgstr "精选推荐"
+
+msgid "چسبی"
+msgstr "自粘"
+
+msgid "کاتیکا"
+msgstr "卡蒂卡"
+
+msgid "کاتیکا | KTK"
+msgstr "KTK | 官方商城"
+
+msgid "کاتیکا | KTK — جلد چسبی کتاب و محصولات منتخب"
+msgstr "KTK — 自粘书皮与精选商品"
+
+msgid "کاتیکا با تمرکز بر محصولات پوشش و جلد چسبی کتاب، تجربه‌ای ساده و قابل اعتماد برای تهیه محصولات موردنیاز شما فراهم می‌کند."
+msgstr "卡蒂卡专注于书皮和保护用品，为您提供便捷可靠的购买体验。"
+
+msgid "کاتیکا؛ راهکاری مناسب برای پوشش و محافظت از کتاب‌ها و دفترهای شما."
+msgstr "卡蒂卡——为图书和笔记本提供可靠保护。"
+
+msgid "کاهش تعداد"
+msgstr "减少数量"
+
+msgid "کتاب‌ها و دفترهای شما"
+msgstr "您的图书和笔记本"
+
+msgid "کنترل اسلایدر"
+msgstr "轮播控制"
+
+msgid "کیفیت تضمین‌شده"
+msgstr "品质保证"
+
+msgid "گران‌ترین"
+msgstr "价格从高到低"
+
+msgid "۱۲ کالا"
+msgstr "12件商品"
+
+msgid "۲۴ کالا"
+msgstr "24件商品"
+
+msgid "۳۶ کالا"
+msgstr "36件商品"
+
+msgid "تعداد انتخاب‌شده معتبر نیست."
+msgstr "选择的数量无效。"
+
+msgid "موجودی برای این تعداد کافی نیست."
+msgstr "库存不足。"
+
+msgid "محصول به سبد خرید اضافه شد."
+msgstr "已加入购物车。"
+
+msgid "سبد خرید خالی است."
+msgstr "购物车为空。"
+
+msgid "لطفاً کمی بعد دوباره نظر ثبت کنید."
+msgstr "请稍后再提交评价。"
+
+msgid "ارسال نظر نامعتبر است."
+msgstr "评价提交无效。"
+
+msgid "نظر شما ثبت شد و پس از تأیید نمایش داده می‌شود."
+msgstr "您的评价已提交，审核后显示。"
+
+msgid "اطلاعات نظر معتبر نیست. همه فیلدها و امتیاز را بررسی کنید."
+msgstr "评价无效，请检查内容和评分。"
+
+msgid "محصول از علاقه‌مندی‌ها حذف شد."
+msgstr "已取消收藏。"
+
+msgid "محصول به علاقه‌مندی‌ها اضافه شد."
+msgstr "已加入收藏。"
+
+msgid "لطفاً کمی بعد دوباره تلاش کنید."
+msgstr "请稍后重试。"
+
+msgid "درخواست پشتیبانی ثبت شد. فروشگاه از طریق اطلاعات تماس شما پیگیری خواهد کرد."
+msgstr "客服请求已提交，我们会与您联系。"
+
+msgid "برای این سفارش یک درخواست باز یا تأییدشده وجود دارد."
+msgstr "该订单已有处理中的退货申请。"
+
+msgid "درخواست شما ثبت شد و پس از بررسی پاسخ داده می‌شود."
+msgstr "您的申请已提交审核。"
+
+msgid "برای این سفارش فیش در انتظار بررسی یا پذیرفته‌شده دارید."
+msgstr "该订单已有待审核或已接受的付款凭证。"
+
+msgid "تصویر فیش بارگذاری شد و در انتظار بررسی قرار دارد."
+msgstr "付款凭证已上传，等待审核。"
+
+msgid "تصویر فیش معتبر نیست؛ فقط PNG، JPEG یا WEBP تا ۵ مگابایت."
+msgstr "凭证图片无效，仅支持最大5MB的PNG、JPEG或WEBP。"
+
+msgid "پیام شما با موفقیت ثبت شد. در اولین فرصت با شما تماس خواهیم گرفت."
+msgstr "留言已收到，我们会尽快联系您。"
+
+msgid "درخواست همکاری شما ثبت شد. پس از بررسی با شما تماس می‌گیریم."
+msgstr "合作申请已收到，审核后会与您联系。"
+
+msgid "پیگیری سفارش"
+msgstr "订单跟进"
+
+msgid "پشتیبانی محصولات"
+msgstr "商品支持"
+
+msgid "خرید عمده"
+msgstr "批量采购"
+
+msgid "همکاری"
+msgstr "合作"
+
+msgid "سایر موارد"
+msgstr "其他"
+
+msgid "تبلیغات و بازاریابی"
+msgstr "广告营销"
+
+msgid "سایر همکاری‌ها"
+msgstr "其他合作形式"
+
+msgid "محصول از مقایسه حذف شد."
+msgstr "已从对比中移除。"
+
+msgid "حداکثر چهار محصول قابل مقایسه هستند."
+msgstr "最多可对比四件商品。"
+
+msgid "محصول به مقایسه اضافه شد."
+msgstr "已加入对比。"
+
+msgid "حذف از مقایسه"
+msgstr "移出对比"
+
+msgid "افزودن به مقایسه"
+msgstr "加入对比"
+
+msgid "مشاهده مقایسه"
+msgstr "查看对比"
+
+msgid "مقایسه محصولات"
+msgstr "商品对比"
+
+msgid "ویژگی"
+msgstr "特征"
+
+msgid "قیمت"
+msgstr "价格"
+
+msgid "موجودی"
+msgstr "库存"
+
+msgid "برای مقایسه، محصول دیگری انتخاب کنید."
+msgstr "请选择另一件商品进行对比。"
+
+msgid "هنوز محصولی برای مقایسه انتخاب نشده است."
+msgstr "尚未选择商品进行对比。"
+
+msgid "بازگشت به محصولات"
+msgstr "返回商品列表"
+
+msgid "شماره تماس معتبر وارد کنید (۸ تا ۱۵ رقم)."
+msgstr "请输入有效的8至15位电话号码。"
+
+msgid "حجم تصویر باید کمتر از ۵ مگابایت باشد."
+msgstr "图片必须小于5MB。"
+
+msgid "فقط تصویر PNG یا JPEG یا WEBP مجاز است."
+msgstr "仅支持PNG、JPEG和WEBP图片。"
+
+msgid "موضوع"
+msgstr "主题"
+
+msgid "نام"
+msgstr "姓名"
+
+msgid "Breadcrumb"
+msgstr "面包屑导航"
+
+msgid "Brand"
+msgstr "品牌"
+
+msgid "SKU"
+msgstr "货号"
+
+msgid "Material"
+msgstr "材质"
+
+msgid "Dimensions"
+msgstr "尺寸"
+
+msgid "Packaging"
+msgstr "包装"
+
+msgid "Application"
+msgstr "用途"
+
+msgid "Select language"
+msgstr "选择语言"
+
+msgid "Apply"
+msgstr "确认"
+
+msgid "گالری محصول"
+msgstr "商品图库"
+
+msgid "انتخاب تصویر محصول"
+msgstr "选择商品图片"
+
+msgid "تصویر اصلی"
+msgstr "主图"
+
+msgid "تصویر نمونه"
+msgstr "示例图片"
+
+msgid "اطلاعات محصول"
+msgstr "商品信息"
+
+msgid "توضیحات این محصول به‌زودی اضافه می‌شود."
+msgstr "商品描述即将更新。"
+
+msgid "از ۵ ستاره"
+msgstr "满分5星"
+
+msgid "دیدگاه تأییدشده"
+msgstr "条已审核评价"
+
+msgid "موجود در انبار"
+msgstr "有库存"
+
+msgid "عدد"
+msgstr "件"
+
+msgid "تعداد"
+msgstr "数量"
+
+msgid "افزودن به سبد خرید"
+msgstr "加入购物车"
+
+msgid "علاقه‌مندی‌ها"
+msgstr "收藏夹"
+
+msgid "افزودن به علاقه‌مندی‌ها"
+msgstr "加入收藏"
+
+msgid "حذف از علاقه‌مندی‌ها"
+msgstr "取消收藏"
+
+msgid "ضمانت کیفیت"
+msgstr "品质保证"
+
+msgid "اصالت کالا"
+msgstr "正品保障"
+
+msgid "پشتیبانی"
+msgstr "客户支持"
+
+msgid "مشاوره محصول"
+msgstr "产品咨询"
+
+msgid "ویژگی‌های محصول"
+msgstr "商品特点"
+
+msgid "کاربرد"
+msgstr "用途"
+
+msgid "جنس"
+msgstr "材质"
+
+msgid "ابعاد استاندارد"
+msgstr "标准尺寸"
+
+msgid "نوع بسته‌بندی"
+msgstr "包装类型"
+
+msgid "کد محصول"
+msgstr "货号"
+
+msgid "اطلاعات بیشتر"
+msgstr "更多信息"
+
+msgid "توضیحات محصول"
+msgstr "商品详情"
+
+msgid "مشخصات فنی"
+msgstr "技术参数"
+
+msgid "دیدگاه خریداران"
+msgstr "买家评价"
+
+msgid "اطلاعات فنی ثبت نشده است."
+msgstr "暂无技术参数。"
+
+msgid "هنوز نظری برای این محصول ثبت نشده است."
+msgstr "该商品暂无评价。"
+
+msgid "ثبت دیدگاه"
+msgstr "撰写评价"
+
+msgid "دیدگاه‌ها پس از تأیید مدیر نمایش داده می‌شوند."
+msgstr "评价经过审核后才会显示。"
+
+msgid "ثبت نظر"
+msgstr "提交评价"
+
+msgid "محصولات مرتبط"
+msgstr "相关商品"
+
+msgid "مشاهده همه"
+msgstr "查看全部"
+
+msgid "مشاهده محصول"
+msgstr "查看商品"
+
+msgid "شماره تماس یا ایمیل"
+msgstr "电话或邮箱"
+
+msgid "آدرس تحویل"
+msgstr "收货地址"
+
+msgid "توضیحات"
+msgstr "备注"
+
+msgid "شرح درخواست"
+msgstr "需求详情"
+
+msgid "دلیل لغو یا مرجوعی"
+msgstr "取消或退货原因"
+
+msgid "تصویر فیش کارت به کارت"
+msgstr "转账凭证图片"
+
+msgid "موضوع پیام *"
+msgstr "消息主题 *"
+
+msgid "نوع همکاری *"
+msgstr "合作类型 *"
+
+msgid "نام و نام خانوادگی *"
+msgstr "姓名 *"
+
+msgid "شماره تماس *"
+msgstr "电话号码 *"
+
+msgid "نام مجموعه (در صورت وجود)"
+msgstr "公司名称（选填）"
+
+msgid "متن پیام خود را بنویسید ..."
+msgstr "请填写您的留言…"
+
+msgid "توضیحات تکمیلی (اختیاری)"
+msgstr "补充说明（选填）"
+
+msgid "مشاوره خرید"
+msgstr "购买咨询"
+
+msgid "پشتیبانی سفارش"
+msgstr "订单客服"
+
+msgid "نمایندگی فروش"
+msgstr "销售代理"
+
+msgid "سایر"
+msgstr "其他"
+
+msgid "همکاری سازمانی"
+msgstr "企业合作"
+
+msgid "تأمین محصول"
+msgstr "产品供应"
+
+msgid "پخش و توزیع"
+msgstr "分销配送"
+
+msgid "تأمین کالا"
+msgstr "供货"
+
+msgid "همکاری تبلیغاتی"
+msgstr "营销合作"
+
+
+msgid "اخبار و رویدادها"
+msgstr "新闻与活动"
+
+msgid "پروفایل"
+msgstr "个人资料"
+
+msgid "پنل مالکیت"
+msgstr "店主后台"
+
+msgid "حساب کاربری"
+msgstr "个人账户"
+
+msgid "منوی حساب کاربری"
+msgstr "账户菜单"

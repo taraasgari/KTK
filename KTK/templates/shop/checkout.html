@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% block title %}ثبت سفارش | KTK{% endblock %}
+{% block content %}<main class="container inner"><div class="section-heading"><div><span class="section-kicker">CHECKOUT</span><h1>تکمیل اطلاعات سفارش</h1></div></div><div class="checkout-grid"><form method="post" class="panel form-panel">{% csrf_token %}<h2>اطلاعات تحویل</h2>{{ form.as_div }}<button class="btn btn-primary wide" type="submit">ثبت نهایی سفارش ←</button><p class="tiny-note">توجه: این فرایند فقط سفارش را ثبت می‌کند و پرداخت آنلاین انجام نمی‌شود.</p></form><aside class="panel"><h2>خلاصه سبد خرید</h2>{% for line in lines %}<div class="summary-row"><span>{{ line.product.name }} × {{ line.quantity }}</span><b>{{ line.subtotal|intcomma }}</b></div>{% endfor %}<div class="cart-total"><strong>جمع کل</strong><strong>{{ total|intcomma }} تومان</strong></div></aside></div></main>{% endblock %}

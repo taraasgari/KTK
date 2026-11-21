@@ -1,0 +1,4 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{% trans "حساب من | کاتیکا" %}{% endblock %}
+{% block content %}<main class="container inner narrow"><div class="panel login-panel"><span class="section-kicker">KTK ACCOUNT</span><h1>{% trans "حساب من" %}</h1><p>{% trans "خوش آمدید،" %} {{ request.user.username }}.</p><p>{% trans "سفارش‌ها در نسخه فعلی به شماره تماس هنگام ثبت سفارش وابسته هستند؛ تاریخچه سفارش‌ها هنوز به حساب کاربری متصل نشده است." %}</p><a class="btn btn-primary" href="{% url 'home' %}#products">{% trans "مشاهده محصولات" %}</a><form method="post" action="{% url 'logout' %}" style="margin-top:20px">{% csrf_token %}<button type="submit" class="btn btn-outline">{% trans "خروج از حساب" %}</button></form></div></main>{% endblock %}

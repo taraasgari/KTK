@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ support_copy.page_title }} | KTK{% endblock %}
+{% block body_class %}kt-support-body{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/katika-support.css' %}">{% endblock %}
+{% block content %}
+{% with c=support_copy %}
+<main class="kt-support" id="support-top">
+  <div class="kt-site-width kt-support-wrap">
+    <header class="kt-support-hero">
+      <div>
+        <h1>{{ c.page_title }}</h1>
+        <p>{{ c.page_intro }}</p>
+      </div>
+    </header>
+
+    <nav class="kt-support-shortcuts" aria-label="Support navigation">
+      <a href="#kt-support-form" class="kt-support-shortcut kt-support-shortcut-active">
+        <span class="kt-support-shortcut-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#ticket"></use></svg></span>
+        <span class="kt-support-shortcut-text"><strong>{{ c.quick_ticket }}</strong><small>{{ c.quick_ticket_info }}</small></span>
+        <svg class="kt-support-shortcut-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+      </a>
+      <a href="{% url 'support_request' %}?subject=پیگیری سفارش#kt-support-form" class="kt-support-shortcut">
+        <span class="kt-support-shortcut-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#tracking"></use></svg></span>
+        <span class="kt-support-shortcut-text"><strong>{{ c.quick_track }}</strong><small>{{ c.quick_track_info }}</small></span>
+        <svg class="kt-support-shortcut-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+      </a>
+      <a href="#kt-support-faq" class="kt-support-shortcut">
+        <span class="kt-support-shortcut-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#help"></use></svg></span>
+        <span class="kt-support-shortcut-text"><strong>{{ c.quick_faq }}</strong><small>{{ c.quick_faq_info }}</small></span>
+        <svg class="kt-support-shortcut-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+      </a>
+      <a href="#kt-support-contacts" class="kt-support-shortcut">
+        <span class="kt-support-shortcut-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#headset"></use></svg></span>
+        <span class="kt-support-shortcut-text"><strong>{{ c.quick_contact }}</strong><small>{{ c.quick_contact_info }}</small></span>
+        <svg class="kt-support-shortcut-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+      </a>
+    </nav>
+
+    <div class="kt-support-main-grid">
+      <section class="kt-support-panel kt-support-form-panel" id="kt-support-form" aria-labelledby="kt-support-form-heading">
+        <h2 id="kt-support-form-heading" class="kt-support-title">{{ c.form_title }}</h2>
+        <p class="kt-support-form-intro">{{ c.form_intro }}</p>
+        {% if form.errors %}<div class="kt-support-errors" role="alert">{{ c.form_error }}</div>{% endif %}
+        <form method="post" class="kt-support-form" novalidate>
+          {% csrf_token %}
+          <div class="kt-support-fields">
+            <div class="kt-support-field">
+              <label for="kt-support-name">{{ c.name }} <em>*</em></label>
+              <div class="kt-support-input-wrap">
+                <input id="kt-support-name" name="name" type="text" required maxlength="120" autocomplete="name" value="{{ form.name.value|default_if_none:'' }}" aria-invalid="{% if form.name.errors %}true{% else %}false{% endif %}">
+                <svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#user"></use></svg>
+              </div>
+              {% for error in form.name.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="kt-support-field">
+              <label for="kt-support-contact">{{ c.phone }} <em>*</em></label>
+              <div class="kt-support-input-wrap">
+                <input id="kt-support-contact" name="contact" type="tel" required maxlength="160" autocomplete="tel" inputmode="tel" value="{{ form.contact.value|default_if_none:'' }}" aria-invalid="{% if form.contact.errors %}true{% else %}false{% endif %}">
+                <svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#phone"></use></svg>
+              </div>
+              {% for error in form.contact.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="kt-support-field">
+              <label for="kt-support-email">{{ c.email }} <span>({{ c.optional }})</span></label>
+              <div class="kt-support-input-wrap">
+                <input id="kt-support-email" name="email" type="email" maxlength="254" autocomplete="email" dir="ltr" value="{{ form.email.value|default_if_none:'' }}" aria-invalid="{% if form.email.errors %}true{% else %}false{% endif %}">
+                <svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#mail"></use></svg>
+              </div>
+              {% for error in form.email.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="kt-support-field">
+              <label for="kt-support-order">{{ c.order_number }}</label>
+              <div class="kt-support-input-wrap">
+                <input id="kt-support-order" name="order_number" type="text" maxlength="36" placeholder="{{ c.order_example }}" dir="ltr" value="{{ form.order_number.value|default_if_none:'' }}" aria-invalid="{% if form.order_number.errors %}true{% else %}false{% endif %}">
+                <svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#package"></use></svg>
+              </div>
+              {% for error in form.order_number.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="kt-support-field kt-support-span-2">
+              <label for="kt-support-subject">{{ c.subject }} <em>*</em></label>
+              <div class="kt-support-input-wrap kt-support-select-wrap">
+                <select id="kt-support-subject" name="subject" required aria-invalid="{% if form.subject.errors %}true{% else %}false{% endif %}">
+                  <option value="">{{ c.choose_subject }}</option>
+                  {% for option in support_subjects %}
+                  <option value="{{ option.value }}" {% if selected_subject == option.value %}selected{% endif %}>{{ option.label }}</option>
+                  {% endfor %}
+                </select>
+                <svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#package"></use></svg>
+              </div>
+              {% for error in form.subject.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+            <div class="kt-support-field kt-support-span-2">
+              <label for="kt-support-body">{{ c.body }} <em>*</em></label>
+              <textarea id="kt-support-body" name="body" rows="3" required maxlength="1000" placeholder="{{ c.body_hint }}" aria-invalid="{% if form.body.errors %}true{% else %}false{% endif %}">{{ form.body.value|default_if_none:'' }}</textarea>
+              {% for error in form.body.errors %}<small class="kt-support-field-error">{{ error }}</small>{% endfor %}
+            </div>
+          </div>
+          <div class="kt-support-form-bottom">
+            <button class="kt-support-send" type="submit"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#send"></use></svg>{{ c.submit }}</button>
+            <small class="kt-support-counter" aria-live="off"><span data-support-count>0</span> / 1000 {{ c.remaining }}</small>
+          </div>
+          <div class="kt-support-honeypot" aria-hidden="true"><label>Website <input name="website" type="text" autocomplete="off" tabindex="-1"></label></div>
+        </form>
+      </section>
+
+      <aside class="kt-support-panel kt-support-contacts" id="kt-support-contacts" aria-labelledby="kt-support-contacts-heading">
+        <h2 class="kt-support-title" id="kt-support-contacts-heading">{{ c.contact_title }}</h2>
+        <div class="kt-support-contact-line">
+          <span class="kt-support-contact-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#phone"></use></svg></span>
+          <div><span>{{ c.contact_phone }}</span>
+            {% if store.contact_phone %}<a href="tel:{{ store.contact_phone }}" dir="ltr">{{ store.contact_phone }}</a>{% else %}<strong>{{ c.not_available }}</strong>{% endif %}
+          </div>
+        </div>
+        <div class="kt-support-contact-line">
+          <span class="kt-support-contact-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#mail"></use></svg></span>
+          <div><span>{{ c.contact_email }}</span>
+            {% if store.support_email or store.contact_email %}<a href="mailto:{% firstof store.support_email store.contact_email %}" dir="ltr">{% firstof store.support_email store.contact_email %}</a>{% else %}<strong>{{ c.not_available }}</strong>{% endif %}
+          </div>
+        </div>
+        <div class="kt-support-contact-line">
+          <span class="kt-support-contact-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#calendar"></use></svg></span>
+          <div><span>{{ c.hours_title }}</span><strong>{{ c.hours_text }}</strong></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="kt-support-bottom-grid">
+      <section class="kt-support-panel kt-support-faq" id="kt-support-faq" aria-labelledby="kt-support-faq-title">
+        <h2 class="kt-support-title" id="kt-support-faq-title">{{ c.faq_title }}</h2>
+        <div class="kt-support-faq-items">
+          <details><summary><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#package"></use></svg>{{ c.faq_1 }}<span class="kt-faq-caret">⌄</span></summary><p>{{ c.faq_1_answer }}</p></details>
+          <details><summary><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#tracking"></use></svg>{{ c.faq_2 }}<span class="kt-faq-caret">⌄</span></summary><p>{{ c.faq_2_answer }}</p></details>
+          <details><summary><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#user"></use></svg>{{ c.faq_3 }}<span class="kt-faq-caret">⌄</span></summary><p>{{ c.faq_3_answer }} <a href="{% url 'cooperation' %}">{{ c.quick_contact }}</a></p></details>
+          <details><summary><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#headset"></use></svg>{{ c.faq_4 }}<span class="kt-faq-caret">⌄</span></summary><p>{{ c.faq_4_answer }}</p></details>
+          <details><summary><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#package"></use></svg>{{ c.faq_5 }}<span class="kt-faq-caret">⌄</span></summary><p>{{ c.faq_5_answer }}</p></details>
+        </div>
+      </section>
+      <div class="kt-support-guides">
+        <a href="{% url 'support_request' %}?subject=پیگیری سفارش#kt-support-form" class="kt-support-guide">
+          <span class="kt-support-guide-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#map"></use></svg></span>
+          <span><strong>{{ c.guide_order }}</strong><small>{{ c.guide_order_sub }}</small></span>
+          <svg class="kt-support-guide-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+        </a>
+        <a href="{% url 'catalog' %}" class="kt-support-guide">
+          <span class="kt-support-guide-icon"><svg aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#book"></use></svg></span>
+          <span><strong>{{ c.guide_products }}</strong><small>{{ c.guide_products_sub }}</small></span>
+          <svg class="kt-support-guide-arrow" aria-hidden="true"><use href="{% static 'icons/katika-support.svg' %}#arrow"></use></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endwith %}
+{% endblock %}
+{% block extra_js %}<script defer src="{% static 'js/katika-support.js' %}"></script>{% endblock %}
